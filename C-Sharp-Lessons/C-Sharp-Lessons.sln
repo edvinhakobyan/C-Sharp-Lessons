@@ -5,10 +5,6 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C-Sharp-Lessons", "C-Sharp-Lessons\C-Sharp-Lessons.csproj", "{08CECB87-18E6-4093-A9E6-973219DDCD7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipes", "..\Tipes\Tipes.csproj", "{1A42D90F-EE4E-4AC7-A138-CB7A03C2840B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables", "..\Variables\Variables.csproj", "{DA12B516-B18D-441D-9DCE-E52C14C4F0B9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolLargeText", "ConsolLargeText\ConsolLargeText.csproj", "{ABD2268F-6351-4EA7-A569-B2DB876E2D0B}"
 EndProject
 Global
@@ -21,14 +17,6 @@ Global
 		{08CECB87-18E6-4093-A9E6-973219DDCD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08CECB87-18E6-4093-A9E6-973219DDCD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08CECB87-18E6-4093-A9E6-973219DDCD7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A42D90F-EE4E-4AC7-A138-CB7A03C2840B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A42D90F-EE4E-4AC7-A138-CB7A03C2840B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A42D90F-EE4E-4AC7-A138-CB7A03C2840B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A42D90F-EE4E-4AC7-A138-CB7A03C2840B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA12B516-B18D-441D-9DCE-E52C14C4F0B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA12B516-B18D-441D-9DCE-E52C14C4F0B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA12B516-B18D-441D-9DCE-E52C14C4F0B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA12B516-B18D-441D-9DCE-E52C14C4F0B9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ABD2268F-6351-4EA7-A569-B2DB876E2D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ABD2268F-6351-4EA7-A569-B2DB876E2D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABD2268F-6351-4EA7-A569-B2DB876E2D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
