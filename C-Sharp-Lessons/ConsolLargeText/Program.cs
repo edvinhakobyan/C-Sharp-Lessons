@@ -53,13 +53,10 @@ class Program
         //char ch = (char)rand.Next(65, 91);
         int x = Console.CursorLeft;
         int y = Console.CursorTop;
-
-        Console.ResetColor();
         char ch = Console.ReadKey().KeyChar;
         Console.SetCursorPosition(x, y);
         Console.Write(' ');
         Console.SetCursorPosition(x, y);
-        Console.ForegroundColor = (ConsoleColor)rand.Next(16);
         return ch;
     }
 
@@ -68,6 +65,7 @@ class Program
     {
         if (char.IsLower(ch))
             ch = char.ToUpper(ch);
+
         switch (ch)
         {
             case 'A': A(); break;
