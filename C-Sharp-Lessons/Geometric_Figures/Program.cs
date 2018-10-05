@@ -36,35 +36,9 @@ namespace Geometric_Figures
                 }
                 else
                 {
-
+                    //Rhombus();
                 }
             }
-        }
-
-        private static void Circle(int r)
-        {
-            Console.WriteLine();
-            int a = Console.WindowWidth / 3;
-            int b = Console.CursorTop + r + 5;
-
-
-            for (int i = 0; i < 2 * r + 1; i++)
-            {
-                Console.WriteLine();
-                for (int j = 0; j < 20 * r; j++)
-                {
-                    if (j == a)
-                    {
-
-                    }
-                    int temp = ((a - j) * (a - j) + (b - i) * (b - i));
-                    if (temp == (r * r))
-                        Console.Write('*');
-                    else
-                        Console.Write(' ');
-                }
-            }
-
         }
 
         private static void Rectangle(int w, int h)
@@ -120,6 +94,37 @@ namespace Geometric_Figures
             Console.Write($"A = {A}");
             Console.SetCursorPosition(0, y + hScale);
             Console.WriteLine();
+        }
+
+        private static void Circle(int r)
+        {
+            int y = Console.CursorTop;
+            int h = 8;
+            int w = 15;
+            int a = 8;
+            int b = 12;
+            Double A = Math.PI * r * r;
+            int ALength = $"A = {A:0.00}".Length;
+
+            for (int i = 0; i < 20; i++)
+            {
+                Console.WriteLine();
+                for (int j = 0; j < 30; j++)
+                {
+                    double temp = 1.0 * (h - i) * (h - i) / (a * a) + 1.0 * (w - j) * (w - j) / (b * b);
+                    if (temp > 0.9 && temp < 1.1)
+                        Console.Write('#');
+                    else
+                        Console.Write(' ');
+                }
+            }
+            Console.SetCursorPosition(w, y + h + 1);
+            Console.Write("----------->");
+            Console.SetCursorPosition(w + 3, y + h);
+            Console.Write($"R = {r}");
+            Console.SetCursorPosition(w - ALength / 2, y + h + 4);
+            Console.Write($"A = {A:0.00}");
+            Console.SetCursorPosition(0, 25);
         }
 
         static int TrueNumber(int min, int max)
