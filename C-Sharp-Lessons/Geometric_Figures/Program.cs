@@ -56,7 +56,7 @@ namespace Geometric_Figures
             w = max;
             h = min;
 
-            int wScale = Console.WindowWidth / 4;
+            int wScale = Console.WindowWidth / 3;
             int hScale = wScale * min / max * 7 / 10;
 
             hScale = hScale > 2 ? hScale : 3;
@@ -99,32 +99,32 @@ namespace Geometric_Figures
         private static void Circle(int r)
         {
             int y = Console.CursorTop;
-            int h = 8;
-            int w = 15;
-            int a = 8;
-            int b = 12;
+            int h = 10;
+            int w = 22;
+            int a = 10;
+            int b = 15;
             Double A = Math.PI * r * r;
             int ALength = $"A = {A:0.00}".Length;
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 30; i++)
             {
                 Console.WriteLine();
-                for (int j = 0; j < 30; j++)
+                for (int j = 0; j < 40; j++)
                 {
                     double temp = 1.0 * (h - i) * (h - i) / (a * a) + 1.0 * (w - j) * (w - j) / (b * b);
-                    if (temp > 0.9 && temp < 1.1)
+                    if (temp > 0.95 && temp < 1.05)
                         Console.Write('+');
                     else
                         Console.Write(' ');
                 }
             }
             Console.SetCursorPosition(w, y + h + 1);
-            Console.Write("----------->");
-            Console.SetCursorPosition(w + 3, y + h);
+            Console.Write("-------------->");
+            Console.SetCursorPosition(w + 4, y + h);
             Console.Write($"R = {r}");
             Console.SetCursorPosition(w - ALength / 2, y + h + 4);
             Console.Write($"A = {A:0.00}");
-            Console.SetCursorPosition(0, y +18);
+            Console.SetCursorPosition(0, y +22);
         }
 
         private static void Rhombus(int w, int h)
