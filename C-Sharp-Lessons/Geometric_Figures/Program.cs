@@ -36,7 +36,7 @@ namespace Geometric_Figures
                 }
                 else
                 {
-                    Console.WriteLine("Enter Length of Rectangle Sides: ");
+                    Console.WriteLine("Enter Width and Height of Rhombus: ");
                     Console.Write("W = ");
                     int A = TrueNumber(0, int.MaxValue);
                     Console.Write("H = ");
@@ -56,8 +56,8 @@ namespace Geometric_Figures
             w = max;
             h = min;
 
-            int wScale = Console.WindowWidth / 3;
-            int hScale = wScale * min / max;
+            int wScale = Console.WindowWidth / 4;
+            int hScale = wScale * min / max * 7 / 10;
 
             hScale = hScale > 2 ? hScale : 3;
             hScale |= 1;
@@ -137,8 +137,8 @@ namespace Geometric_Figures
             w = max;
             h = min;
 
-            int wScale = Console.WindowWidth / 3;
-            int hScale = wScale * min / max;
+            int wScale = Console.WindowWidth / 4;
+            int hScale = wScale * min / max * 7 / 10;
 
             hScale = hScale > 2 ? hScale : 3;
             hScale |= 1;
@@ -168,12 +168,12 @@ namespace Geometric_Figures
                 Console.WriteLine();
             }
 
-            for (int i = 1; i <= hScale; i++)
+            for (int i = 1; i < hScale; i++)
             {
                 Console.SetCursorPosition(x -2 , y + i);
                 if (i == 1)
                     Console.Write('^');
-                else if (i == hScale)
+                else if (i == hScale - 1)
                     Console.Write('-');
                 else
                     Console.Write('|');
