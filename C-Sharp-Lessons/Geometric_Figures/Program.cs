@@ -21,9 +21,9 @@ namespace Geometric_Figures
                 if (number == 1)
                 {
                     Console.WriteLine("Enter Length of Rectangle Sides: ");
-                    Console.Write("A = ");
+                    Console.Write("W = ");
                     int A = TrueNumber(0, int.MaxValue);
-                    Console.Write("B = ");
+                    Console.Write("H = ");
                     int B = TrueNumber(0, int.MaxValue);
                     Rectangle(A, B);
                 }
@@ -36,7 +36,12 @@ namespace Geometric_Figures
                 }
                 else
                 {
-                    //Rhombus();
+                    Console.WriteLine("Enter Length of Rectangle Sides: ");
+                    Console.Write("W = ");
+                    int A = TrueNumber(0, int.MaxValue);
+                    Console.Write("H = ");
+                    int B = TrueNumber(0, int.MaxValue);
+                    Rhombus(A, B);
                 }
             }
         }
@@ -44,7 +49,7 @@ namespace Geometric_Figures
         private static void Rectangle(int w, int h)
         {
             Console.WriteLine();
-            int A = w * h;
+            long A = (long)w * h;
             int min = w <= h ? w : h;
             int max = min == w ? h : w;
 
@@ -66,20 +71,15 @@ namespace Geometric_Figures
 
             for (int i = 1; i <= hScale; i++)
             {
-                Console.Write(new string(' ', 10));
+                Console.CursorLeft = 10;
                 for (int j = 1; j <= wScale; j++)
                 {
                     if (i == 1 || i == hScale)
-                    {
-                        if (j == 1 || j == wScale)
-                            Console.Write('+');
-                        else
-                            Console.Write('-');
-                    }
+                        Console.Write('+');
                     else
                     {
                         if (j == 1 || j == wScale)
-                            Console.Write('|');
+                            Console.Write('+');
                         else
                             Console.Write(' ');
                     }
@@ -113,7 +113,7 @@ namespace Geometric_Figures
                 {
                     double temp = 1.0 * (h - i) * (h - i) / (a * a) + 1.0 * (w - j) * (w - j) / (b * b);
                     if (temp > 0.9 && temp < 1.1)
-                        Console.Write('#');
+                        Console.Write('+');
                     else
                         Console.Write(' ');
                 }
@@ -124,7 +124,70 @@ namespace Geometric_Figures
             Console.Write($"R = {r}");
             Console.SetCursorPosition(w - ALength / 2, y + h + 4);
             Console.Write($"A = {A:0.00}");
-            Console.SetCursorPosition(0, 25);
+            Console.SetCursorPosition(0, y +18);
+        }
+
+        private static void Rhombus(int w, int h)
+        {
+            Console.WriteLine();
+            long A = (long)w * h;
+            int min = w <= h ? w : h;
+            int max = min == w ? h : w;
+
+            w = max;
+            h = min;
+
+            int wScale = Console.WindowWidth / 3;
+            int hScale = wScale * min / max;
+
+            hScale = hScale > 2 ? hScale : 3;
+            hScale |= 1;
+
+            int x = Console.CursorLeft + 12;
+            int y = Console.CursorTop;
+
+            int wLength = max.ToString().Length;
+            int hLength = min.ToString().Length;
+            int ALength = $"A = {A}".Length;
+
+            for (int i = 1; i <= hScale; i++)
+            {
+                Console.CursorLeft = i + 12;
+                for (int j = 1; j <= wScale; j++)
+                {
+                    if (i == 1 || i == hScale)
+                        Console.Write('+');
+                    else
+                    {
+                        if (j == 1 || j == wScale)
+                            Console.Write('+');
+                        else
+                            Console.Write(' ');
+                    }
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 1; i <= hScale; i++)
+            {
+                Console.SetCursorPosition(x -2 , y + i);
+                if (i == 1)
+                    Console.Write('^');
+                else if (i == hScale)
+                    Console.Write('-');
+                else
+                    Console.Write('|');
+            }
+            Console.SetCursorPosition(10 - hLength, y + hScale / 2);
+            Console.Write(min);
+
+            Console.SetCursorPosition(x + wScale / 2 - wLength + 1, y - 1);
+            Console.Write(max);
+
+            Console.SetCursorPosition(x + (wScale - ALength) / 2 + hScale / 2, y + hScale / 2);
+            Console.Write($"A = {A}");
+            Console.SetCursorPosition(0, y + hScale);
+            Console.WriteLine();
         }
 
         static int TrueNumber(int min, int max)
