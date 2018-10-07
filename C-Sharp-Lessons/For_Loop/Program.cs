@@ -10,6 +10,8 @@ namespace For_Loop
     {
         static void Main(string[] args)
         {
+            while (true)
+                Loop10();
             Loop1();
             Loop2();
             Loop3();
@@ -18,6 +20,9 @@ namespace For_Loop
             Loop7();
 
         }
+
+        /*Խնդիր_1:
+          Ներմուծել քառանիշ թիվ և հաշվել նրա թվանշանների գումարը:*/
 
         static void Loop1()
         {
@@ -36,7 +41,8 @@ namespace For_Loop
             Console.ReadKey();
         }
 
-
+        /*Խնդիր_2:
+          Տրված են K և N(N > 0) ամբողջ թվերը։ N անգամ արտածել K թիվը։*/
         static void Loop2()
         {
             Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
@@ -51,6 +57,8 @@ namespace For_Loop
             Console.ReadKey();
         }
 
+        /*Խնդիր_3:
+          Ներածել n միանիշ թիվը։ Արտածել n-ին չգերազանցող թվանշանները։*/
         static void Loop3()
         {
             Console.WriteLine("Enter number n: n > 0 && n < 10");
@@ -62,7 +70,8 @@ namespace For_Loop
             Console.WriteLine();
             Console.ReadKey();
         }
-
+        /*Խնդիր_4:
+          Ներածել n բնական թիվը։ Արտածել n–ի 1–ից մինչև 9 աստիճանների արժեքները։*/
         static void Loop4()
         {
             Console.WriteLine("Enter number n: n > 0 && n < MaxValue");
@@ -78,7 +87,8 @@ namespace For_Loop
             }
             Console.ReadKey();
         }
-
+        /*Խնդիր_5:
+          Հաշվել տրված բնական թվին չգերազանցող զույգ թվերի գումարը՝ առանց զույգությունը ստուգելու։*/
         static void Loop5()
         {
             Console.WriteLine("Enter number n: n > 0 && n < int.MaxValue");
@@ -87,7 +97,9 @@ namespace For_Loop
             Console.WriteLine($"(a1 + an) * n / 2 = (0 + {n}) * {n / 2} / 2 = {n * n / 4}");
             Console.ReadKey();
         }
-
+        /*Խնդիր_7:
+         Տրված են A և B (A < B) ամբողջ թվերը։ Գտնել [A, B] 
+         հատվածին պատկանող բոլոր ամբողջ թվերի գումարը։*/
         static void Loop7()
         {
             Console.WriteLine("Enter number A: A > int.MinValue && A < MaxValue");
@@ -100,6 +112,64 @@ namespace For_Loop
             Console.ReadKey();
         }
 
+        /*Խնդիր_9:
+          Տրված է N բնական թիվը։ Հաշվել 1 + 1/2 + 1/3 + … + 1/N գումարը (այն իրական թիվ է)։*/
+        static void Loop9()
+        {
+            Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
+            Console.Write($"N = ");
+            int N = TrueNumberFromConsole(0, int.MaxValue);
+
+            double sum = 0;
+            for (int i = 1; i <= N; i++)
+                sum += 1.0 / i;
+
+            Console.WriteLine($"1 + 1/2 + 1/3 + ... + 1/{N} = {sum}");
+        }
+
+        /*Խնդիր_10:
+          Տրված է N բնական թիվը։ Հաշվել N^2 + (N + 1)^2 + (N + 2)^2 + … + (2·N)^2 գումարը։*/
+        static void Loop10()
+        {
+            Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
+            Console.Write($"N = ");
+            int N = TrueNumberFromConsole(0, int.MaxValue);
+
+            ulong sum = 0;
+            for (int i = 0; i <= N; i++)
+                sum += (ulong)(N + i) * (ulong)(N + i);
+
+            Console.WriteLine($"{N}^2 + ({N} + 1)^2 + ({N} + 2)^2 + . . . + (2 * {N})^2 = {sum}");
+        }
+
+        /*Տրված է N բնական թիվը։ Հաշվել 1.1 · 1.2 · 1.3 · … արտադրյալը 
+        (արտադրիչների քանակը N է)։*/
+        static void Loop11()
+        {
+            Console.WriteLine("Enter number N: A > 0 && A < int.MaxValue");
+            Console.Write($"N = ");
+            int N = TrueNumberFromConsole(0, int.MaxValue);
+
+            double multy = 1;
+            for (double i = 1.1; i <= (1.1 + 0.1 * N); i += 0.1)
+                multy *= i;
+
+            Console.WriteLine($"1.1 * 1.2 + 1.3 * ... (N time) = {multy}");
+        }
+
+        /*Տրված է N բնական թիվը։ Հաշվել 1.1 – 1.2 + 1.3 – … արտահայտության արժեքը։ 
+          Նշանափոխ գումարելիների քանակը N է։ Պայմանական (if) օպերատոր չօգտագործել։*/
+        static void Loop12()
+        {
+            Console.WriteLine("Enter number N: A > 0 && A < int.MaxValue");
+            Console.Write($"N = ");
+            int N = TrueNumberFromConsole(0, int.MaxValue);
+
+            if ((N & 1) == 1)
+                Console.WriteLine($"1.1 - 1.2 + 1.3 - ... (N time) = {-0.1 * (N-1) / 2 + (0.1 * N + 1)}");
+            else
+                Console.WriteLine($"1.1 - 1.2 + 1.3 - ... (N time) = {-0.1 * N / 2}");
+        }
 
         static int TrueNumberFromConsole(int min, int max)
         {
