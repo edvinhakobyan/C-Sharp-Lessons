@@ -10,6 +10,11 @@ namespace For_Loop
     {
         static void Main(string[] args)
         {
+            Loop1();
+            Loop2();
+            Loop3();
+            Loop4();
+            Loop5();
             Loop7();
 
         }
@@ -71,16 +76,15 @@ namespace For_Loop
                     step *= (ulong)n;      //checked {step *= (ulong)n; }
                 Console.WriteLine($"n ^ {i} = {step}");
             }
-            Console.WriteLine();
             Console.ReadKey();
         }
 
         static void Loop5()
         {
-            Console.WriteLine("Enter number n: n > 0 && n < MaxValue");
+            Console.WriteLine("Enter number n: n > 0 && n < int.MaxValue");
             Console.Write($"n = ");
             int n = TrueNumberFromConsole(0, int.MaxValue);
-            Console.WriteLine($"(a1 + an) * n / 2 = (0 + {n}) * {n/2} / 2 = {n*n/4}" );
+            Console.WriteLine($"(a1 + an) * n / 2 = (0 + {n}) * {n / 2} / 2 = {n * n / 4}");
             Console.ReadKey();
         }
 
@@ -95,9 +99,6 @@ namespace For_Loop
             Console.WriteLine($"(a1 + an) * n / 2 = ({A} + {B}) * {B - A + 1} / 2  = {(A + B) * (B - A + 1) / 2}");
             Console.ReadKey();
         }
-
-
-
 
 
         static int TrueNumberFromConsole(int min, int max)
