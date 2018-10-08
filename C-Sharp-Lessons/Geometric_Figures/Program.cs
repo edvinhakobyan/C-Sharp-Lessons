@@ -101,8 +101,8 @@ namespace Geometric_Figures
             int y = Console.CursorTop;
             int h = 10;
             int w = 22;
-            int a = 10;
-            int b = 15;
+            int a = 8;
+            int b = 16;
             Double A = Math.PI * r * r;
             int ALength = $"A = {A:0.00}".Length;
 
@@ -119,7 +119,7 @@ namespace Geometric_Figures
                 }
             }
             Console.SetCursorPosition(w, y + h + 1);
-            Console.Write("-------------->");
+            Console.Write("+-------------->");
             Console.SetCursorPosition(w + 4, y + h);
             Console.Write($"R = {r}");
             Console.SetCursorPosition(w - ALength / 2, y + h + 4);

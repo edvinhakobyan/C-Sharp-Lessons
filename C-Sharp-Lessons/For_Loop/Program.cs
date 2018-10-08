@@ -10,14 +10,8 @@ namespace For_Loop
     {
         static void Main(string[] args)
         {
-            while (true)
-                Loop10();
-            Loop1();
-            Loop2();
-            Loop3();
-            Loop4();
-            Loop5();
-            Loop7();
+            Loop14();
+            Console.ReadKey();
 
         }
 
@@ -87,6 +81,7 @@ namespace For_Loop
             }
             Console.ReadKey();
         }
+
         /*Խնդիր_5:
           Հաշվել տրված բնական թվին չգերազանցող զույգ թվերի գումարը՝ առանց զույգությունը ստուգելու։*/
         static void Loop5()
@@ -170,6 +165,42 @@ namespace For_Loop
             else
                 Console.WriteLine($"1.1 - 1.2 + 1.3 - ... (N time) = {-0.1 * N / 2}");
         }
+
+        static void Loop13()
+        {
+            for (int i = 1; i <= 9; i++)
+            {
+                for (int j = 1; j <= 9; j++)
+                    Console.WriteLine($"{i} * {j} = {i * j}");
+                Console.WriteLine("****************");
+            }
+        }
+
+        static void Loop14()
+        {
+            string a = Console.ReadLine();
+
+            int num = int.Parse(a);
+            int dzaj = num;
+            int l = a.Length;
+
+            for (int i = 1; num > 0; i++)
+            {
+                if (!((num % 10) == dzaj / (int)(Math.Pow(10, l - i))))
+                {
+                    Console.WriteLine("vad a");
+                    break;
+                }
+                num /= 10;
+                dzaj %= (int)(Math.Pow(10, l - i));
+            }
+            
+
+
+
+
+        }
+
 
         static int TrueNumberFromConsole(int min, int max)
         {
