@@ -11,7 +11,7 @@ namespace For_Loop
         static void Main(string[] args)
         {
             while (true)
-                Loop10();
+                Loop13();
             Loop1();
             Loop2();
             Loop3();
@@ -146,7 +146,7 @@ namespace For_Loop
         (արտադրիչների քանակը N է)։*/
         static void Loop11()
         {
-            Console.WriteLine("Enter number N: A > 0 && A < int.MaxValue");
+            Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
             Console.Write($"N = ");
             int N = TrueNumberFromConsole(0, int.MaxValue);
 
@@ -161,7 +161,7 @@ namespace For_Loop
           Նշանափոխ գումարելիների քանակը N է։ Պայմանական (if) օպերատոր չօգտագործել։*/
         static void Loop12()
         {
-            Console.WriteLine("Enter number N: A > 0 && A < int.MaxValue");
+            Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
             Console.Write($"N = ");
             int N = TrueNumberFromConsole(0, int.MaxValue);
 
@@ -170,6 +170,21 @@ namespace For_Loop
             else
                 Console.WriteLine($"1.1 - 1.2 + 1.3 - ... (N time) = {-0.1 * N / 2}");
         }
+        /*Խնդիր_13:
+          Տրված է N բնական թիվը։ Հաշվել այդ թվի քառակուսին՝ օգտագործելով հետևյալ բանաձևը. N2 = 1 + 3 + 5 + … + (2*N – 1). 
+          Հերթական գումարելին ավելացնելիս արտածել գումարի ընթացիկ արժեքը 
+          (արդյունքում կարտածվեն 1-ից մինչև N բոլոր թվերի քառակուսիները)։*/
+        static void Loop13()
+        {
+            Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
+            Console.Write($"N = ");
+            int N = TrueNumberFromConsole(0, int.MaxValue);
+            ulong sum = 0;
+            for (int i = 1; i <= (2 * N - 1); i += 2)
+                Console.WriteLine(sum += (ulong)i);
+
+        }
+
 
         static int TrueNumberFromConsole(int min, int max)
         {
