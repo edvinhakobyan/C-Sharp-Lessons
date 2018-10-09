@@ -185,6 +185,45 @@ namespace For_Loop
 
         }
 
+        static void Loop14()
+        {
+            for (int i = 1; i <= 9; i++)
+            {
+                for (int j = 1; j <= 9; j++)
+                    Console.WriteLine($"{i} * {j} = {i * j}");
+                Console.WriteLine("****************");
+            }
+        }
+
+        static void Loop15()
+        {
+            string a = Console.ReadLine();
+
+            int num1 = int.Parse(a);
+            int num2 = num1;
+
+            int l = a.Length;
+
+            for (int i = 1; i <= l / 2; i++)
+            {
+                
+                if (!((num1 % 10) == num2 / (int)(Math.Pow(10, l - i))))
+                {
+                    Console.WriteLine("vad a");
+                    break;
+                }
+                num1 /= 10;
+                num2 %= (int)(Math.Pow(10, l - i));
+            }
+
+
+            Console.WriteLine("lav a");
+
+
+        }
+
+
+
 
         static int TrueNumberFromConsole(int min, int max)
         {
