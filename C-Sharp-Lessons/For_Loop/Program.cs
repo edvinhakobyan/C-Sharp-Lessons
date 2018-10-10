@@ -19,6 +19,8 @@ namespace For_Loop
 
         }
 
+
+
         static void Loop50()
         {
             //Console.OutputEncoding = Encoding.UTF8;
@@ -215,6 +217,8 @@ namespace For_Loop
                 }
                 num /= 10;
                 dzaj %= (int)(Math.Pow(10, l - i));
+
+                
             }
         }
 
