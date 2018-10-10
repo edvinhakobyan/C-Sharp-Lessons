@@ -208,14 +208,68 @@ namespace For_Loop
             }
         }
 
-
-
         static void Loop17()
         {
             Console.Write("W = ");
             int W = TrueNumberFromConsole(0, Console.WindowWidth);
             Console.Write("H = ");
             int H = TrueNumberFromConsole(0, Console.WindowHeight);
+
+
+            int curY = Console.CursorTop;
+            for (int i = 0; i < H; i++)
+            {
+                for (int j = 0; j <= W; j++)
+                {
+                    if ((2.0 * j / H + 2.0 * i / W > 0.95 && 2.0 * j / H + 2.0 * i / W < 1.05) ||
+                        (2.0 * j / H - 2.0 * i / W > 0.95 && 2.0 * j / H - 2.0 * i / W < 1.05) ||
+                        (2.0 * i / H - 2.0 * j / W > 0.95 && 2.0 * i / H - 2.0 * j / W < 1.05))
+                        WriteConsol(j, i + curY, '*');
+                    else
+                        WriteConsol(j, i + curY, '-');
+
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+        }
+
+
+        static void Loop18()
+        {
+            for (int i = 1; i < int.MaxValue; i++)
+            {
+                if (sum(i) == i)
+                {
+                    Console.WriteLine(i);
+                    Console.ReadKey();
+                }
+
+                if (i % 1000000 == 0)
+                    Console.WriteLine(i);
+            }
+            Console.ReadKey();
+        }
+
+        private static int sum(int i)
+        {
+            int sum = 0;
+            while (i > 0)
+            {
+                sum += (i % 10);
+                i /= 10;
+            }
+            return 2 * sum;
+        }
+
+        static void WriteConsol(int x, int y, char ch)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(ch);
+        }
+
+
+
 
         static int TrueNumberFromConsole(int min, int max)
         {
