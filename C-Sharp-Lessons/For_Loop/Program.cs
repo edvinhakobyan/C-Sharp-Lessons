@@ -11,7 +11,7 @@ namespace For_Loop
         static void Main(string[] args)
         {
             while (true)
-                Loop13();
+                Loop16();
             Loop1();
             Loop2();
             Loop3();
@@ -215,14 +215,30 @@ namespace For_Loop
                 num1 /= 10;
                 num2 %= (int)(Math.Pow(10, l - i));
             }
-
-
             Console.WriteLine("lav a");
-
-
         }
 
+        static void Loop16()
+        {
+            string a = Console.ReadLine();
 
+            string b = "";
+
+            int key = 458975;
+
+            for (int i = 0; i < a.Length; i++)
+                b += (Char)(a[i] ^ key);
+
+            Console.WriteLine(b);
+
+            string c = "";
+
+            for (int i = 0; i < a.Length; i++)
+                c += (Char)(b[i] ^ key);
+
+            Console.WriteLine(c);
+
+        }
 
 
         static int TrueNumberFromConsole(int min, int max)
