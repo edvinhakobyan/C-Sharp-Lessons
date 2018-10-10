@@ -10,9 +10,28 @@ namespace For_Loop
     {
         static void Main(string[] args)
         {
-            while (true)
-                Loop18();
+            Loop50();
 
+        }
+
+
+
+        static void Loop50()
+        {
+            //Console.OutputEncoding = Encoding.UTF8;
+            //Console.WriteLine("Վիքիպեդիայից՝ ազատ հանրագիտարանից");
+
+            ulong a = ulong.MaxValue - 1;
+
+            while (a > 1)
+            {
+                if (a % 2 == 0)
+                    a /= 2;
+                else
+                    a = (3 * a + 1);
+
+                Console.WriteLine(a);
+            }
         }
 
         /*Խնդիր_1:
@@ -189,50 +208,7 @@ namespace For_Loop
             }
         }
 
-        static void Loop15()
-        {
-            string a = Console.ReadLine();
 
-            int num1 = int.Parse(a);
-            int num2 = num1;
-
-            int l = a.Length;
-
-            for (int i = 1; i <= l / 2; i++)
-            {
-                
-                if (!((num1 % 10) == num2 / (int)(Math.Pow(10, l - i))))
-                {
-                    Console.WriteLine("vad a");
-                    break;
-                }
-                num1 /= 10;
-                num2 %= (int)(Math.Pow(10, l - i));
-            }
-            Console.WriteLine("lav a");
-        }
-
-        static void Loop16()
-        {
-            string a = Console.ReadLine();
-
-            string b = "";
-
-            int key = 458975;
-
-            for (int i = 0; i < a.Length; i++)
-                b += (Char)(a[i] ^ key);
-
-            Console.WriteLine(b);
-
-            string c = "";
-
-            for (int i = 0; i < a.Length; i++)
-                c += (Char)(b[i] ^ key);
-
-            Console.WriteLine(c);
-
-        }
 
         static void Loop17()
         {
@@ -241,62 +217,7 @@ namespace For_Loop
             Console.Write("H = ");
             int H = TrueNumberFromConsole(0, Console.WindowHeight);
 
-
-            int curY = Console.CursorTop;
-            for (int i = 0; i < H; i++)
-            {
-                for (int j = 0; j <= W; j++)
-                {
-                    if ((2.0 * j / H + 2.0 * i / W > 0.95 && 2.0 * j / H + 2.0 * i / W < 1.05) ||  
-                        (2.0 * j / H - 2.0 * i / W  > 0.95 && 2.0 * j / H - 2.0 * i / W < 1.05) ||
-                        (2.0 * i / H - 2.0 * j / W > 0.95 && 2.0 * i / H - 2.0 * j / W < 1.05) )
-                        WriteConsol(j, i + curY, '*');
-                    else
-                        WriteConsol(j, i + curY, '-');
-
-                }
-                Console.WriteLine();
-            }
-            Console.ReadKey();
-        }
-
-
-        static void Loop18()
-        {
-            for (int i = 1; i < int.MaxValue; i++)
-            {
-                if (sum(i) == i)
-                {
-                    Console.WriteLine(i);
-                    Console.ReadKey();
-                }
-
-                if (i % 1000000 == 0)
-                    Console.WriteLine(i);
-            }
-            Console.ReadKey();
-        }
-
-        private static int sum(int i)
-        {
-            int sum = 0;
-            while(i>0)
-            {
-                sum += (i % 10);
-                i /= 10;
-            }
-            return 2*sum;
-        }
-
-        static void WriteConsol(int x, int y, char ch)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(ch);
-        }
-
-
-
-            static int TrueNumberFromConsole(int min, int max)
+        static int TrueNumberFromConsole(int min, int max)
         {
             int number;
             for(; !(int.TryParse(Console.ReadLine(), out number) && number >= min && number < max); )
