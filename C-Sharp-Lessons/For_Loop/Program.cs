@@ -10,12 +10,14 @@ namespace For_Loop
     {
         static void Main(int arg)
         {
-            if (arg == 0)
-                return;
-
-            Main(arg--);
-            Loop50();
-            Console.ReadKey();
+            while (true)
+                Loop16();
+            Loop1();
+            Loop2();
+            Loop3();
+            Loop4();
+            Loop5();
+            Loop7();
 
         }
 
@@ -105,7 +107,6 @@ namespace For_Loop
             }
             Console.ReadKey();
         }
-
         /*Խնդիր_5:
           Հաշվել տրված բնական թվին չգերազանցող զույգ թվերի գումարը՝ առանց զույգությունը ստուգելու։*/
         static void Loop5()
@@ -165,7 +166,7 @@ namespace For_Loop
         (արտադրիչների քանակը N է)։*/
         static void Loop11()
         {
-            Console.WriteLine("Enter number N: A > 0 && A < int.MaxValue");
+            Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
             Console.Write($"N = ");
             int N = TrueNumberFromConsole(0, int.MaxValue);
 
@@ -180,7 +181,7 @@ namespace For_Loop
           Նշանափոխ գումարելիների քանակը N է։ Պայմանական (if) օպերատոր չօգտագործել։*/
         static void Loop12()
         {
-            Console.WriteLine("Enter number N: A > 0 && A < int.MaxValue");
+            Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
             Console.Write($"N = ");
             int N = TrueNumberFromConsole(0, int.MaxValue);
 
@@ -189,8 +190,22 @@ namespace For_Loop
             else
                 Console.WriteLine($"1.1 - 1.2 + 1.3 - ... (N time) = {-0.1 * N / 2}");
         }
-
+        /*Խնդիր_13:
+          Տրված է N բնական թիվը։ Հաշվել այդ թվի քառակուսին՝ օգտագործելով հետևյալ բանաձևը. N2 = 1 + 3 + 5 + … + (2*N – 1). 
+          Հերթական գումարելին ավելացնելիս արտածել գումարի ընթացիկ արժեքը 
+          (արդյունքում կարտածվեն 1-ից մինչև N բոլոր թվերի քառակուսիները)։*/
         static void Loop13()
+        {
+            Console.WriteLine("Enter number N: N > 0 && N < int.MaxValue");
+            Console.Write($"N = ");
+            int N = TrueNumberFromConsole(0, int.MaxValue);
+            ulong sum = 0;
+            for (int i = 1; i <= (2 * N - 1); i += 2)
+                Console.WriteLine(sum += (ulong)i);
+
+        }
+
+        static void Loop14()
         {
             for (int i = 1; i <= 9; i++)
             {
@@ -200,31 +215,35 @@ namespace For_Loop
             }
         }
 
-        static void Loop14()
+        static void Loop15()
         {
             string a = Console.ReadLine();
 
-            int num = int.Parse(a);
-            int dzaj = num;
+            int num1 = int.Parse(a);
+            int num2 = num1;
+
             int l = a.Length;
 
-            for (int i = 1; num > 0; i++)
+            for (int i = 1; i <= l / 2; i++)
             {
-                if (!((num % 10) == dzaj / (int)(Math.Pow(10, l - i))))
+                
+                if (!((num1 % 10) == num2 / (int)(Math.Pow(10, l - i))))
                 {
                     Console.WriteLine("vad a");
                     break;
                 }
                 num /= 10;
                 dzaj %= (int)(Math.Pow(10, l - i));
-
-                
             }
+            
+
+            string c = "";
+
+            for (int i = 0; i < a.Length; i++)
+                c += (Char)(b[i] ^ key);
+
+
         }
-
-
-
-
 
 
             static int TrueNumberFromConsole(int min, int max)
