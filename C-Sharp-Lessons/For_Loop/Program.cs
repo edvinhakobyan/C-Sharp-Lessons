@@ -8,11 +8,33 @@ namespace For_Loop
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(int arg)
         {
-            Loop14();
+            if (arg == 0)
+                return;
+
+            Main(arg--);
+            Loop50();
             Console.ReadKey();
 
+        }
+
+        static void Loop50()
+        {
+            //Console.OutputEncoding = Encoding.UTF8;
+            //Console.WriteLine("Վիքիպեդիայից՝ ազատ հանրագիտարանից");
+
+            ulong a = ulong.MaxValue - 1;
+
+            while (a > 1)
+            {
+                if (a % 2 == 0)
+                    a /= 2;
+                else
+                    a = (3 * a + 1);
+
+                Console.WriteLine(a);
+            }
         }
 
         /*Խնդիր_1:
@@ -194,15 +216,14 @@ namespace For_Loop
                 num /= 10;
                 dzaj %= (int)(Math.Pow(10, l - i));
             }
-            
-
-
-
-
         }
 
 
-        static int TrueNumberFromConsole(int min, int max)
+
+
+
+
+            static int TrueNumberFromConsole(int min, int max)
         {
             int number;
             for(; !(int.TryParse(Console.ReadLine(), out number) && number >= min && number < max); )
