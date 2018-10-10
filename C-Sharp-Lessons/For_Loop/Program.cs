@@ -8,16 +8,9 @@ namespace For_Loop
 {
     class Program
     {
-        static void Main(int arg)
+        static void Main(string[] args)
         {
-            while (true)
-                Loop16();
-            Loop1();
-            Loop2();
-            Loop3();
-            Loop4();
-            Loop5();
-            Loop7();
+            Loop50();
 
         }
 
@@ -215,35 +208,7 @@ namespace For_Loop
             }
         }
 
-        static void Loop15()
-        {
-            string a = Console.ReadLine();
 
-            int num1 = int.Parse(a);
-            int num2 = num1;
-
-            int l = a.Length;
-
-            for (int i = 1; i <= l / 2; i++)
-            {
-                
-                if (!((num1 % 10) == num2 / (int)(Math.Pow(10, l - i))))
-                {
-                    Console.WriteLine("vad a");
-                    break;
-                }
-                num /= 10;
-                dzaj %= (int)(Math.Pow(10, l - i));
-            }
-            
-
-            string c = "";
-
-            for (int i = 0; i < a.Length; i++)
-                c += (Char)(b[i] ^ key);
-
-
-        }
 
 
             static int TrueNumberFromConsole(int min, int max)
