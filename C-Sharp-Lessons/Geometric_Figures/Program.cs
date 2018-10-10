@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Geometric_Figures
 {
@@ -10,6 +11,7 @@ namespace Geometric_Figures
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Select shape:");
             Console.WriteLine("1: Rectangle");
             Console.WriteLine("2: Circle");
@@ -101,6 +103,9 @@ namespace Geometric_Figures
             int y = Console.CursorTop;
             int h = 10;
             int w = 22;
+
+
+            //double rrr = 1.0 * Console.LargestWindowWidth / Console.LargestWindowHeight;
             int a = 8;
             int b = 16;
             Double A = Math.PI * r * r;
