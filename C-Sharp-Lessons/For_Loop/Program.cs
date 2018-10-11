@@ -79,18 +79,6 @@ namespace For_Loop
         }
 
 
-        static void WriteConsol(int x, int y, char ch)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(ch);
-        }
-
-        /*              if ((2.0 * j / H + 2.0 * i / W > 0.95 && 2.0 * j / H + 2.0 * i / W < 1.05) ||
-                        (2.0 * j / H - 2.0 * i / W > 0.95 && 2.0 * j / H - 2.0 * i / W < 1.05) ||
-
-                        (2.0 * i / H - 2.0 * j / W > 0.95 && 2.0 * i / H - 2.0 * j / W < 1.05) ||
-                        (1.0 * i / H + 1.0 * j / W > ((1.0 + (2.0 * curY + H) / 2.0 * H) - 0.1) && 1.0 * i / H + 1.0 * j / W < ((1 + (2.0 * curY + H) / 2.0 * H) + 0.1)) )*/
-
         static void Loop50()
         {
             //Console.OutputEncoding = Encoding.UTF8;
