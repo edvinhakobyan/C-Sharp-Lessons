@@ -10,11 +10,86 @@ namespace For_Loop
     {
         static void Main(string[] args)
         {
-            Loop50();
+
 
         }
 
+        static void Rhombus()
+        {
+            Console.BufferWidth = Int16.MaxValue - 1;
 
+            while (true)
+            {
+                Console.Write("Enter the Rhombus wide: W = ");
+                int w = TrueNumberFromConsole(0, Int16.MaxValue);
+                Console.Write("Enter the Rhombus high: H = ");
+                int h = TrueNumberFromConsole(0, Int16.MaxValue);
+                Console.Write("Fill Rhombus ? 1-(if Yes) 0-(if No) ");
+                int t = TrueNumberFromConsole(0, 2);
+                
+                w &= 0x1FFFFE;
+                h &= 0x1FFFFE;
+
+                double W = (double)w;
+                double H = (double)h;
+
+                for (int i = 0; i <= H; i++)
+                {
+                    for (int j = 0; j <= W; j++)
+                    {
+                        if (t == 1)
+                        {
+                            if (1.0 * i >= H * (W - 2 * j) / (2 * W) &&
+                                1.0 * i >= j * H / W - H / 2 &&
+                                1.0 * i <= 3.0 * H / 2 - j * H / W &&
+                                1.0 * i <= H / 2 + j * H / W)
+                                Console.Write('+');
+                            else
+                                Console.Write(' ');
+                        }
+                        else
+                        {
+                            if (1.0 * i == H * (W - 2 * j) / (2 * W) ||
+                                1.0 * i == j * H / W - H / 2 ||
+                                1.0 * i == 3.0 * H / 2 - j * H / W ||
+                                1.0 * i == H / 2 + j * H / W)
+                                Console.Write('+');
+                            else
+                                Console.Write(' ');
+                        }
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its 32-bit signed integer equivalent.
+        /// Guaranteed returning the right result
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        static int TrueNumberFromConsole(int min, int max)
+        {
+            int number;
+            while (!(int.TryParse(Console.ReadLine(), out number) && number >= min && number < max))
+                Console.WriteLine("Wrong Selection");
+            return number;
+        }
+
+
+        static void WriteConsol(int x, int y, char ch)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(ch);
+        }
+
+        /*              if ((2.0 * j / H + 2.0 * i / W > 0.95 && 2.0 * j / H + 2.0 * i / W < 1.05) ||
+                        (2.0 * j / H - 2.0 * i / W > 0.95 && 2.0 * j / H - 2.0 * i / W < 1.05) ||
+
+                        (2.0 * i / H - 2.0 * j / W > 0.95 && 2.0 * i / H - 2.0 * j / W < 1.05) ||
+                        (1.0 * i / H + 1.0 * j / W > ((1.0 + (2.0 * curY + H) / 2.0 * H) - 0.1) && 1.0 * i / H + 1.0 * j / W < ((1 + (2.0 * curY + H) / 2.0 * H) + 0.1)) )*/
 
         static void Loop50()
         {
@@ -22,7 +97,6 @@ namespace For_Loop
             //Console.WriteLine("Վիքիպեդիայից՝ ազատ հանրագիտարանից");
 
             ulong a = ulong.MaxValue - 1;
-
             while (a > 1)
             {
                 if (a % 2 == 0)
@@ -208,32 +282,6 @@ namespace For_Loop
             }
         }
 
-        static void Loop17()
-        {
-            Console.Write("W = ");
-            int W = TrueNumberFromConsole(0, Console.WindowWidth);
-            Console.Write("H = ");
-            int H = TrueNumberFromConsole(0, Console.WindowHeight);
-
-
-            int curY = Console.CursorTop;
-            for (int i = 0; i < H; i++)
-            {
-                for (int j = 0; j <= W; j++)
-                {
-                    if ((2.0 * j / H + 2.0 * i / W > 0.95 && 2.0 * j / H + 2.0 * i / W < 1.05) ||
-                        (2.0 * j / H - 2.0 * i / W > 0.95 && 2.0 * j / H - 2.0 * i / W < 1.05) ||
-                        (2.0 * i / H - 2.0 * j / W > 0.95 && 2.0 * i / H - 2.0 * j / W < 1.05))
-                        WriteConsol(j, i + curY, '*');
-                    else
-                        WriteConsol(j, i + curY, '-');
-
-                }
-                Console.WriteLine();
-            }
-            Console.ReadKey();
-        }
-
 
         static void Loop18()
         {
@@ -244,9 +292,6 @@ namespace For_Loop
                     Console.WriteLine(i);
                     Console.ReadKey();
                 }
-
-                if (i % 1000000 == 0)
-                    Console.WriteLine(i);
             }
             Console.ReadKey();
         }
@@ -262,33 +307,11 @@ namespace For_Loop
             return 2 * sum;
         }
 
-        static void WriteConsol(int x, int y, char ch)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(ch);
-        }
 
 
 
 
-        static int TrueNumberFromConsole(int min, int max)
-        {
-            int number;
-            for(; !(int.TryParse(Console.ReadLine(), out number) && number >= min && number < max); )
-                Console.WriteLine("Wrong Selection");
-            return number;
-        }
+
+
     }
 }
-
-
-
-/*Console.SetCursorPosition(10+W / 2 + i, curY + i);
-                Console.Write('*');
-                Console.SetCursorPosition(10+W / 2 - i, curY + i);
-                Console.Write('*');
-
-                Console.SetCursorPosition(10+W / 2 + i, curY + H - i);
-                Console.Write('*');
-                Console.SetCursorPosition(10+W / 2 - i, curY + H - i);
-                Console.Write('*');*/
