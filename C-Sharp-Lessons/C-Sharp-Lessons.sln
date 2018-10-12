@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum1", "Sum1\Sum1.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhombus", "Rhombus\Rhombus.csproj", "{42869E55-0108-4EA0-8E74-DB856685E5C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork1", "HomeWork1\HomeWork1.csproj", "{71217FA3-0433-4C57-BBB5-9ECE04B364B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{42869E55-0108-4EA0-8E74-DB856685E5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42869E55-0108-4EA0-8E74-DB856685E5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42869E55-0108-4EA0-8E74-DB856685E5C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71217FA3-0433-4C57-BBB5-9ECE04B364B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71217FA3-0433-4C57-BBB5-9ECE04B364B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71217FA3-0433-4C57-BBB5-9ECE04B364B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71217FA3-0433-4C57-BBB5-9ECE04B364B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
