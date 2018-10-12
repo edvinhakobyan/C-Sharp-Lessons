@@ -10,10 +10,13 @@ namespace For_Loop
     {
         static void Main(string[] args)
         {
-
+            Rhombus();
 
         }
 
+        /// <summary>
+        /// Drow Rhombus with wide and high
+        /// </summary>
         static void Rhombus()
         {
             Console.BufferWidth = Int16.MaxValue - 1;
@@ -67,8 +70,8 @@ namespace For_Loop
         /// Converts the string representation of a number to its 32-bit signed integer equivalent.
         /// Guaranteed returning the right result
         /// </summary>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
+        /// <param name="min">min valu</param>
+        /// <param name="max">max value</param>
         /// <returns></returns>
         static int TrueNumberFromConsole(int min, int max)
         {
