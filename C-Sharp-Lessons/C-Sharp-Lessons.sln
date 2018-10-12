@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "For_Loop", "For_Loop\For_Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum1", "Sum1\Sum1.csproj", "{885CA6AC-BBBC-4FAA-87C8-6BE50FFBB006}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhombus", "Rhombus\Rhombus.csproj", "{42869E55-0108-4EA0-8E74-DB856685E5C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{885CA6AC-BBBC-4FAA-87C8-6BE50FFBB006}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{885CA6AC-BBBC-4FAA-87C8-6BE50FFBB006}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{885CA6AC-BBBC-4FAA-87C8-6BE50FFBB006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42869E55-0108-4EA0-8E74-DB856685E5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42869E55-0108-4EA0-8E74-DB856685E5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42869E55-0108-4EA0-8E74-DB856685E5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42869E55-0108-4EA0-8E74-DB856685E5C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -23,7 +23,7 @@ namespace Sum1
         /// <returns></returns>
         static double Sum(ulong X)
         {
-            ulong N = 15;
+            ulong N = 10;
             double sum = 1;
             Console.WriteLine(sum + " +");
             for (ulong i = 1; i <= N; i++)
