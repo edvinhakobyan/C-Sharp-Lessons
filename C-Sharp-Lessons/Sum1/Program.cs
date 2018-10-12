@@ -25,7 +25,7 @@ namespace Sum1
         {
             ulong N = 15;
             double sum = 1;
-            Console.WriteLine(sum + '+');
+            Console.WriteLine(sum + " +");
             for (ulong i = 1; i <= N; i++)
             {
                 sum += Math.Pow(-1, i) * Numerator(i) * Math.Pow(X, i) / Denominator(i);
