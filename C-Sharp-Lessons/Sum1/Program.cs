@@ -10,7 +10,11 @@ namespace Sum1
     {   
         static void Main(string[] args)
         {
-            double tt = Sum(10);
+            for (double i = -0.9; i < 1; i+=0.1)
+            {
+                i = Math.Round(i, 1);
+                Console.WriteLine(i + " --> " + Sum(i,15));
+            }
         }
 
         //                    0   1       2               3                   4
@@ -21,18 +25,17 @@ namespace Sum1
         /// </summary>
         /// <param name="X"></param>
         /// <returns></returns>
-        static double Sum(ulong X)
+        static double Sum(double X, ulong  N)
         {
-            ulong N = 10;
             double sum = 1;
-            Console.WriteLine(sum + " +");
+            //Console.WriteLine(sum + " +");
             for (ulong i = 1; i <= N; i++)
             {
                 sum += Math.Pow(-1, i) * Numerator(i) * Math.Pow(X, i) / Denominator(i);
-                Console.WriteLine("[{3}{1} * X^{0} / {2}] + ", i, Numerator(i), Denominator(i), Math.Pow(-1, i ^ 1) > 0 ? '+' : '-');
+                //Console.WriteLine("[{3}{1} * X^{0} / {2}] + ", i, Numerator(i), Denominator(i), Math.Pow(-1, i ^ 1) > 0 ? '+' : '-');
             }
             //Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop-1);
-            Console.WriteLine("= " + sum);
+            //Console.WriteLine("= " + sum);
             return sum;
         }
 
@@ -46,7 +49,8 @@ namespace Sum1
             if (ind < 3) return 1;
             ulong ret = 1, j = 1;
             for (ulong i = 1; i <= ind - 2; i++)
-                ret *= (j += 2);
+                checked
+                { ret *= (j += 2); }
             return ret;
         }
 
@@ -59,7 +63,8 @@ namespace Sum1
         {
             ulong ret = 1, j = 0;
             for (ulong i = 0; i < n; i++)
-                ret *= (j += 2);
+                checked { ret *= (j += 2);}
+                
             return ret;
         }
 
