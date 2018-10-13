@@ -38,8 +38,8 @@ namespace HomeWork1
             for (; N > 0; N /= 10)
             {
                 t = N % 10;
-                if ((t & 1) == 1)
-                    min = t < min ? t : min;
+                if ((t & 1) == 1 && t < min)
+                    min =  t;
             }
             Console.WriteLine($"min = {min}");
         }
@@ -93,8 +93,7 @@ namespace HomeWork1
           Արտածել տրված թվի բոլոր բաժանարարները։
           Խնդիր_22:
           Հաշվել տրված թվի բոլոր բաժանարարների գումարը։*/
-
-        static void Problem21_22(ulong N)
+        static void Problem21_22(ulong N)  //?
         {
             ulong sum = N;
             for (ulong i = 1; i < N / 2; i++)
@@ -125,7 +124,7 @@ namespace HomeWork1
         static void Problem25(ulong N)
         {
             ulong N1 = N, p = 0;
-            while( (N >>= 1) > 0)  ++p;
+            while((N >>= 1) > 0)  ++p;
             Console.WriteLine($"{N1} ~ 2^{p}");
         }
 
