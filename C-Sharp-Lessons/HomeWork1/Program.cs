@@ -8,10 +8,12 @@ namespace HomeWork1
 {
     class Program
     {
+        static Random rand = new Random();
         static void Main(string[] args)
         {
             Problem21_22(TrueNumberFromConsole(0,ulong.MaxValue));
         }
+
 
         /*Խնդիր_16:
           Հաշվել տրված բնական թվի թվանշանների գումարը, քանակը, արտադրյալը։*/
