@@ -10,7 +10,7 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
-            Problem26(TrueNumberFromConsole(0,ulong.MaxValue));
+            Problem21_22(TrueNumberFromConsole(0,ulong.MaxValue));
         }
 
         /*Խնդիր_16:
@@ -19,13 +19,12 @@ namespace HomeWork1
         {
             ulong count = 0, sum = 0, mult = 1, dig = 0;
 
-            while (N > 0)
+            for (; N > 0; N /= 10)
             {
                 dig = N % 10;
                 sum += dig;
                 mult *= dig;
                 count++;
-                N /= 10;
             }
             Console.WriteLine($"count = {count}");
             Console.WriteLine($"sum = {sum}");
@@ -54,12 +53,11 @@ namespace HomeWork1
         static void Problem18(ulong N)
         {
             ulong sum = 0, t = 0;
-            while (N > 0)
+            for (; N > 0; N /= 10)
             {
                 t = N % 10;
                 if ((t & 1) == 1 && t > 4)
                     sum += t;
-                N /= 10;
             }
             Console.WriteLine($"sum = {sum}");
         }
@@ -70,12 +68,11 @@ namespace HomeWork1
         static void Problem19(ulong N)
         {
             ulong mult = 1, t = 0;
-            while (N > 0)
+            for (; N > 0; N /= 10)
             {
                 t = N % 10;
                 if ((t & 1) == 0 && t < 7)
                     mult *= t;
-                N /= 10;
             }
             Console.WriteLine($"sum = {mult}");
         }
@@ -86,12 +83,11 @@ namespace HomeWork1
         static void Problem20(ulong N)
         {
             ulong max = 0, min = 9, t = 0;
-            while (N > 0)
+            for (; N > 0; N /= 10)
             {
                 t = N % 10;
                 min = t < min ? t : min;
                 max = t > max ? t : max;
-                N /= 10;
             }
             Console.WriteLine($"(max - min)^2 = {(max - min) * (max - min)}");
         }
