@@ -21,9 +21,7 @@ namespace HomeWork1
 
             for (; N > 0; N /= 10)
             {
-                dig = N % 10;
-                sum += dig;
-                mult *= dig;
+                dig = N % 10; sum += dig;  mult *= dig;
                 count++;
             }
             Console.WriteLine($"count = {count}");
@@ -37,12 +35,11 @@ namespace HomeWork1
         static void Problem17(ulong N)
         {
             ulong min = 9, t = 0;
-            while (N > 0)
+            for (; N > 0; N /= 10)
             {
                 t = N % 10;
                 if ((t & 1) == 1)
                     min = t < min ? t : min;
-                N /= 10;
             }
             Console.WriteLine($"min = {min}");
         }
@@ -115,8 +112,7 @@ namespace HomeWork1
         static void Problem24(ulong N)
         {
             ulong n = 0, N1 = N;
-            while (N > 1 && N % 3 == 0)
-            { N /= 3; n++;  }
+            for (; N > 0 && N % 3 == 0; N /= 3) n++;
 
             if (N == 1)
                 Console.WriteLine($"{N1} = 3^{n}");
