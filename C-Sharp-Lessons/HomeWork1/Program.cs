@@ -8,10 +8,9 @@ namespace HomeWork1
 {
     class Program
     {
-        static Random rand = new Random();
         static void Main(string[] args)
         {
-            Problem21_22(TrueNumberFromConsole(0,ulong.MaxValue));
+
         }
 
 
@@ -19,16 +18,12 @@ namespace HomeWork1
           Հաշվել տրված բնական թվի թվանշանների գումարը, քանակը, արտադրյալը։*/
         static void Problem16(ulong N)
         {
-            ulong count = 0, sum = 0, mult = 1, dig = 0;
-
-            for (; N > 0; N /= 10)
+            ulong count, sum = 0, mult = 1, dig = 0;
+            for (count = 0; N > 0; N /= 10, count++)
             {
-                dig = N % 10; sum += dig;  mult *= dig;
-                count++;
+                dig = N % 10; sum += dig; mult *= dig;
             }
-            Console.WriteLine($"count = {count}");
-            Console.WriteLine($"sum = {sum}");
-            Console.WriteLine($"mult = {mult}");
+            Console.WriteLine($" count = {count}\n sum = {sum}\n mult = {mult}");
         }
 
 
@@ -36,14 +31,14 @@ namespace HomeWork1
           Գտնել տրված թվի կենտ թվանշաններից ամենափոքրը։*/
         static void Problem17(ulong N)
         {
-            ulong min = 9, t = 0;
+            ulong min = 9, t = 0, n = 0;
             for (; N > 0; N /= 10)
             {
                 t = N % 10;
                 if ((t & 1) == 1 && t < min)
-                    min =  t;
+                { min = t; n++; }
             }
-            Console.WriteLine($"min = {min}");
+            Console.WriteLine(n > 0 ? $"min = {min}" : $"All Digits Are Even");
         }
 
 
@@ -97,15 +92,15 @@ namespace HomeWork1
           Հաշվել տրված թվի բոլոր բաժանարարների գումարը։*/
         static void Problem21_22(ulong N)  //?
         {
-            ulong sum = N;
+            ulong sum = N, count = 0;
             for (ulong i = 1; i < N / 2; i++)
                 if (N % i == 0)
                 {
-                    sum += i;
+                    sum += i;   count++;
                     Console.WriteLine(i);
                 }
             Console.WriteLine(N);
-            Console.WriteLine("\n" + sum);
+            Console.WriteLine("\n" + $"sum = {sum}" + "\n" + $"count = {count}");
         }
 
         /*Խնդիր_24:

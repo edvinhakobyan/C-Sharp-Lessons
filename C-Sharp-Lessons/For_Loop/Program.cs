@@ -10,7 +10,7 @@ namespace For_Loop
     {
         static void Main(string[] args)
         {
-
+            int r = int.Parse(TrueNumber());
         }
 
         /// <summary>
@@ -26,6 +26,32 @@ namespace For_Loop
             while (!(int.TryParse(Console.ReadLine(), out number) && number >= min && number < max))
                 Console.WriteLine("Wrong Selection");
             return number;
+        }
+
+
+        static string TrueNumber()
+        {
+            string ret = "";
+            ConsoleKeyInfo input;
+            while (true)
+            {
+                input = Console.ReadKey();
+                if (false)
+                {
+                    Console.CursorLeft--;
+                    continue;
+                }
+                else if(input.Key == ConsoleKey.LeftArrow)
+                {
+                    Console.CursorLeft--;
+                }
+
+
+
+
+                    ret += input;
+            }
+            return ret;
         }
 
 
