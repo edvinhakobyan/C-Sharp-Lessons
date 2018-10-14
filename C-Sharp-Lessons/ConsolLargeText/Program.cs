@@ -10,7 +10,8 @@ class Program
 
     static int curent_x = 0;
     static int curent_y = 0;
-    static Random rand = new Random();
+    static LinkedList<int> curent_width = new LinkedList<int>();
+    //static Random rand = new Random();
 
     public static int Curent_x
     {
@@ -26,21 +27,36 @@ class Program
             {
                 curent_x = value;
             }
+            Console.SetCursorPosition(value, curent_y);
         }
     }
-
     public static int Curent_y
     {
         get { return curent_y; }
-        set { curent_y = value; }
+        set
+        {
+            curent_y = value;
+            Console.SetCursorPosition(curent_x, value);
+        }
     }
 
-
+    public static int Curent_width
+    {
+        get
+        {
+            return curent_width.Last();;
+        }
+        set
+        {
+            curent_width.AddLast(value);
+        }
+    }
 
     static void Main(string[] args)
     {
         Console.WindowWidth = 150;
         Console.BufferWidth = 150;
+
         Console.BufferHeight = Int16.MaxValue - 1;
 
         while (true)
@@ -99,8 +115,29 @@ class Program
             case '?': Ansver(); break;
             case ' ': Spase(); break;
             case '\r': Enter(); break;
+            case '\b': Backspace(); break;
             default: return;
         }
+    }
+
+    private static void Backspace()
+    {
+        if (Curent_x == 0) return;
+        Curent_x -= Curent_width;
+        int x = Console.CursorLeft;
+        int y = Console.CursorTop;
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < Curent_width; j++)
+            {
+                Console.Write(' ');
+                Curent_x++;
+            }
+            Curent_x = x;
+            Curent_y++;
+        }
+        Curent_x = x; Curent_y = y;
+        curent_width.RemoveLast();
     }
 
     static void A()
@@ -123,7 +160,7 @@ class Program
         Write(Curent_x + 3, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
     static void B()
@@ -147,7 +184,7 @@ class Program
         Write(Curent_x + 2, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
     static void C()
@@ -165,7 +202,7 @@ class Program
         Write(Curent_x + 2, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
 
@@ -189,7 +226,7 @@ class Program
         Write(Curent_x + 2, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
 
@@ -213,7 +250,7 @@ class Program
         Write(Curent_x + 3, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
     static void F()
@@ -232,7 +269,7 @@ class Program
         Write(Curent_x + 0, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
 
@@ -256,7 +293,7 @@ class Program
         //Write(Curent_x + 4, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
 
@@ -280,7 +317,7 @@ class Program
         Write(Curent_x + 3, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
     static void I()
     {
@@ -294,7 +331,7 @@ class Program
 
 
         Curent_x += 2;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 2;
     }
     static void J()
     {
@@ -310,10 +347,9 @@ class Program
         Write(Curent_x + 2, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
-
-
+        Curent_width = 5;
     }
+
     static void K()
     {
         Write(Curent_x + 0, Curent_y + 0);
@@ -332,7 +368,7 @@ class Program
         Write(Curent_x + 3, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
     static void L()
     {
@@ -348,7 +384,7 @@ class Program
         Write(Curent_x + 3, Curent_y + 6);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
     static void M()
     {
@@ -373,7 +409,7 @@ class Program
         Write(Curent_x + 6, Curent_y + 6);
 
         Curent_x += 8;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 8;
     }
 
     static void N()
@@ -397,7 +433,7 @@ class Program
         Write(Curent_x + 4, Curent_y + 6);
 
         Curent_x += 6;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 6;
     }
 
     static void O()
@@ -419,7 +455,7 @@ class Program
 
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
     static void P()
@@ -441,7 +477,7 @@ class Program
 
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
     static void Q()
     {
@@ -463,7 +499,7 @@ class Program
         Write(Curent_x + 4, Curent_y + 6);
 
         Curent_x += 6;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 6;
     }
 
     static void R()
@@ -485,9 +521,8 @@ class Program
         Write(Curent_x + 2, Curent_y + 5);
         Write(Curent_x + 3, Curent_y + 6);
 
-
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
     static void S()
     {
@@ -506,7 +541,7 @@ class Program
 
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
     static void T()
     {
@@ -523,7 +558,7 @@ class Program
         Write(Curent_x + 4, Curent_y + 0);
 
         Curent_x += 6;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 6;
     }
 
     static void U()
@@ -544,7 +579,7 @@ class Program
         Write(Curent_x + 3, Curent_y + 5);
 
         Curent_x += 5;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 5;
     }
 
     static void V()
@@ -564,7 +599,7 @@ class Program
         Write(Curent_x + 3, Curent_y + 5);
 
         Curent_x += 6;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 6;
     }
 
     static void W()
@@ -592,7 +627,7 @@ class Program
         Write(Curent_x + 6, Curent_y + 6);
 
         Curent_x += 10;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 10;
     }
 
     static void X()
@@ -613,7 +648,7 @@ class Program
         Write(Curent_x + 4, Curent_y + 6);
 
         Curent_x += 6;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 6;
     }
 
     static void Y()
@@ -631,7 +666,7 @@ class Program
         Write(Curent_x + 2, Curent_y + 6);
 
         Curent_x += 6;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 6;
     }
 
     static void Z()
@@ -653,7 +688,7 @@ class Program
         Write(Curent_x + 4, Curent_y + 6);
 
         Curent_x += 6;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 6;
     }
 
     static void Dot()
@@ -661,7 +696,7 @@ class Program
         Write(Curent_x + 0, Curent_y + 6);
 
         Curent_x += 2;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 2;
     }
 
     static void Vosk()
@@ -674,7 +709,7 @@ class Program
         Write(Curent_x + 0, Curent_y + 6);
 
         Curent_x += 2;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 2;
     }
 
     static void Ansver()
@@ -691,7 +726,7 @@ class Program
         Write(Curent_x + 2, Curent_y + 6);
 
         Curent_x += 2;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 2;
     }
 
 
@@ -704,13 +739,12 @@ class Program
     static void Spase()
     {
         Curent_x += 3;
-        Console.SetCursorPosition(Curent_x, Curent_y);
+        Curent_width = 3;
     }
 
     static void Enter()
     {
         Curent_x = 0;
         Curent_y += 8;
-        Console.SetCursorPosition(Curent_x, Curent_y);
     }
 }
