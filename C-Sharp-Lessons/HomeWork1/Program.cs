@@ -10,9 +10,8 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
-
+            Problem21(993999999998889);
         }
-
 
         /*Խնդիր_16:
           Հաշվել տրված բնական թվի թվանշանների գումարը, քանակը, արտադրյալը։*/
@@ -87,20 +86,34 @@ namespace HomeWork1
         }
 
         /*Խնդիր_21:
-          Արտածել տրված թվի բոլոր բաժանարարները։
-          Խնդիր_22:
-          Հաշվել տրված թվի բոլոր բաժանարարների գումարը։*/
-        static void Problem21_22(ulong N)  //?
+          Արտածել տրված թվի բոլոր բաժանարարները։*/
+        static void Problem21(ulong N)  //?
         {
-            ulong sum = N, count = 0;
-            for (ulong i = 1; i < N / 2; i++)
+            for (ulong i = 1; i * i <= N; i++)
                 if (N % i == 0)
                 {
-                    sum += i;   count++;
-                    Console.WriteLine(i);
+                    if (i * i != N)
+                        Console.WriteLine("{0}\n{1}", i, N / i);
+                    else
+                        Console.WriteLine(i);
                 }
-            Console.WriteLine(N);
-            Console.WriteLine("\n" + $"sum = {sum}" + "\n" + $"count = {count}");
+        }
+
+        /*Խնդիր_22:
+          Հաշվել տրված թվի բոլոր բաժանարարների գումարը։*/
+        static ulong Problem22(ulong N)  //?
+        {
+            ulong sum = 0;
+            for (ulong i = 1; i * i <= N; i++)
+                if (N % i == 0)
+                {
+                    if (i * i != N)
+                        sum += (i + N / i);
+                    else
+                        sum += i;
+                }
+            Console.WriteLine(sum);
+            return sum;
         }
 
         /*Խնդիր_24:
