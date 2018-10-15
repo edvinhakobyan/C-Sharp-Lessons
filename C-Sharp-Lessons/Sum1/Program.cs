@@ -10,10 +10,10 @@ namespace Sum1
     {   
         static void Main(string[] args)
         {
-            for (double i = -0.9; i < 1; i+=0.1)
+            for (double i = -0.9; i < 1; i += 0.1)
             {
                 i = Math.Round(i, 1);
-                Console.WriteLine(i + " --> " + Sum(i,15));
+                Console.WriteLine(i + " --> " + Sum(i, 15));
             }
         }
 

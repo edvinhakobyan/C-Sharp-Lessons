@@ -10,7 +10,7 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
-            Problem21(993999999998889);
+            
         }
 
         /*Խնդիր_16:
@@ -28,22 +28,22 @@ namespace HomeWork1
 
         /*Խնդիր_17:
           Գտնել տրված թվի կենտ թվանշաններից ամենափոքրը։*/
-        static void Problem17(ulong N)
+        static long Problem17(long N)
         {
-            ulong min = 9, t = 0, n = 0;
+            long min = 9, t = 0, n = 0;
             for (; N > 0; N /= 10)
             {
                 t = N % 10;
                 if ((t & 1) == 1 && t < min)
                 { min = t; n++; }
             }
-            Console.WriteLine(n > 0 ? $"min = {min}" : $"All Digits Are Even");
+            return n > 0 ? min : -1;
         }
 
 
         /*Խնդիր_18:
           Հաշվել տրված թվի 4-ից մեծ կենտ թվանշանների գումարը։*/
-        static void Problem18(ulong N)
+        static ulong Problem18(ulong N)
         {
             ulong sum = 0, t = 0;
             for (; N > 0; N /= 10)
@@ -52,13 +52,13 @@ namespace HomeWork1
                 if ((t & 1) == 1 && t > 4)
                     sum += t;
             }
-            Console.WriteLine($"sum = {sum}");
+            return sum;
         }
 
 
         /*Խնդիր_19:
           Հաշվել տրված թվի 7-ից փոքր զույգ թվանշանների արտադրյալը։*/
-        static void Problem19(ulong N)
+        static ulong Problem19(ulong N)
         {
             ulong mult = 1, t = 0;
             for (; N > 0; N /= 10)
@@ -67,13 +67,13 @@ namespace HomeWork1
                 if ((t & 1) == 0 && t < 7)
                     mult *= t;
             }
-            Console.WriteLine($"sum = {mult}");
+            return mult;
         }
 
 
         /*Խնդիր_20:
           Գտնել տրված թվի ամենամեծ և ամենափոքր թվանշանների տարբերության քառակուսին։*/
-        static void Problem20(ulong N)
+        static ulong Problem20(ulong N)
         {
             ulong max = 0, min = 9, t = 0;
             for (; N > 0; N /= 10)
@@ -82,7 +82,7 @@ namespace HomeWork1
                 min = t < min ? t : min;
                 max = t > max ? t : max;
             }
-            Console.WriteLine($"(max - min)^2 = {(max - min) * (max - min)}");
+            return (max - min) * (max - min);
         }
 
         /*Խնդիր_21:
