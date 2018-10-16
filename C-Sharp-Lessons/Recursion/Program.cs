@@ -9,14 +9,21 @@ namespace Recursion
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
-           // for (BigInteger i = 0; i < 120; i++)
-            
-            Console.WriteLine(Factorial(5000));
+           for (ulong i = 0; i < 10; i++)
+            Console.WriteLine(Fibonachi(i));
             
 
             Console.ReadKey();
+        }
+
+
+        static int SumDigit(ulong n)
+        {
+            if (n == 0) return;
+
+
         }
 
 
@@ -30,21 +37,10 @@ namespace Recursion
         // 1 1 2 3 5 8
         static ulong Fibonachi(ulong n)
         {
-            if (n <= 1) return 1;
+            if (n < 2) return n;
             return Fibonachi(n-2) + Fibonachi(n-1);
         }
 
 
-        static void write(int num)
-        {
-            if(num != 0)
-            {
-                write(num - 1);
-                Console.WriteLine($"*{num}");
-                write(num - 1); 
-            }
-            else
-                Console.WriteLine(num); 
-        }
     }
 }
