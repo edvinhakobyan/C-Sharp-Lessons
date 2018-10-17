@@ -30,7 +30,6 @@ namespace Recursion
             BigInteger ret = 1;
             for (int i = 1; i <= n; i++)
                 ret = BigInteger.Multiply(ret, i);
-
             return ret;
         }
 
