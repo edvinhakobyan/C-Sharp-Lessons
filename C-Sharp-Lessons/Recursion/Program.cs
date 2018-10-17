@@ -11,21 +11,21 @@ namespace Recursion
     {
         static void Main1(string[] args)
         {
-           // for (BigInteger i = 0; i < 120; i++)
-            
-            Console.WriteLine(Factorial(5000));
-            
+            // for (BigInteger i = 0; i < 120; i++)
 
+            Console.WriteLine(Factorial(5000));
+
+        }
 
         static int SumDigit(ulong n)
         {
             if (n == 0) return;
 
-
+            return 1;
         }
 
 
-        static BigInteger Factorial1(BigInteger n)
+        static BigInteger Factorial(BigInteger n)
         {
             BigInteger ret = 1;
             for (int i = 1; i <= n; i++)
@@ -34,10 +34,10 @@ namespace Recursion
             return ret;
         }
 
-        static BigInteger Factorial(BigInteger n)
+        static BigInteger Factorial_Recursion(BigInteger n)
         {
             if (n <= 1) return 1;
-            return n * Factorial(n - 1);
+            return n * Factorial_Recursion(n - 1);
         }
 
 
@@ -48,17 +48,5 @@ namespace Recursion
             return Fibonachi(n - 2) + Fibonachi(n - 1);
         }
 
-
-        static void write(int num)
-        {
-            if (num != 0)
-            {
-                write(num - 1);
-                Console.WriteLine($"{num}");
-                //bwrite(num - 1); 
-            }
-            else
-                Console.WriteLine(num); //0 0 1 1 2 2 3 3 4 4 5 5
-        }
     }
 }
