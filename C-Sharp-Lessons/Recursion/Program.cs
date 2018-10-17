@@ -30,7 +30,6 @@ namespace Recursion
             BigInteger ret = 1;
             for (int i = 1; i <= n; i++)
                 ret = BigInteger.Multiply(ret, i);
-
             return ret;
         }
 
@@ -48,17 +47,5 @@ namespace Recursion
             return Fibonachi(n - 2) + Fibonachi(n - 1);
         }
 
-
-        static void write(int num)
-        {
-            if (num != 0)
-            {
-                write(num - 1);
-                Console.WriteLine($"{num}");
-                //bwrite(num - 1); 
-            }
-            else
-                Console.WriteLine(num); //0 0 1 1 2 2 3 3 4 4 5 5
-        }
     }
 }
