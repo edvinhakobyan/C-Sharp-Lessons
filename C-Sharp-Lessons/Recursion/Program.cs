@@ -9,13 +9,19 @@ namespace Recursion
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
-            // for (BigInteger i = 0; i < 120; i++)
+           // for (BigInteger i = 0; i < 120; i++)
+            
+            Console.WriteLine(Factorial(5000));
+            
 
-            write(5);
 
-            Console.ReadKey();
+        static int SumDigit(ulong n)
+        {
+            if (n == 0) return;
+
+
         }
 
 
