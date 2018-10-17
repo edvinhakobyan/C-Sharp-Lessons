@@ -17,12 +17,19 @@ namespace Recursion
 
         }
 
-        static int SumDigit(ulong n)
+        static BigInteger Factorial_Recursion(BigInteger n)
         {
-            if (n == 0) return;
+            if (n <= 1) return 1;
+            return n * Factorial_Recursion(n - 1);
+        }
+
+        /*static int SumDigit(ulong n)
+        {
+            if (n == 0) return 1;
 
             return 1;
-        }
+        }*/
+
 
 
         static BigInteger Factorial(BigInteger n)
@@ -33,11 +40,6 @@ namespace Recursion
             return ret;
         }
 
-        static BigInteger Factorial_Recursion(BigInteger n)
-        {
-            if (n <= 1) return 1;
-            return n * Factorial_Recursion(n - 1);
-        }
 
 
         // 1 1 2 3 5 8
