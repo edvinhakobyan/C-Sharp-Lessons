@@ -20,12 +20,38 @@ namespace Recursion
             //    Console.Write('*');
             //}
             //Console.ReadKey();
-            for (ulong i = 1; i < 50; i++)
-            {
-                Console.WriteLine(i + " " + 1.0*Fibonachi(i)/Fibonachi(i - 1));
-            }
+            
+            
+                Console.WriteLine(NOD1(1500,20));
+            
             Console.ReadKey();
 
+        }
+
+        static ulong NOK(ulong a, ulong b)
+        {
+            Console.WriteLine(a + " " + b);
+            return a * b / NOD(a, b);
+        }
+
+        static ulong NOD(ulong a, ulong b)  
+        {
+            Console.WriteLine(a + " " + b);
+            if (a % b == 0) return b;
+
+            return NOD(b, a % b);
+        }
+
+        static int NOD1(int a, int b)
+        {
+            while (a != b)
+            {
+                if (a > b)
+                    a -= b;
+                else
+                    b -= a;
+            }
+            return a;
         }
 
         // 1 1 2 3 5 8
