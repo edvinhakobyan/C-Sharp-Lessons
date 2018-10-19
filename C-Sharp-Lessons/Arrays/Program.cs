@@ -10,7 +10,7 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-
+            Task31(7);
             Console.ReadKey();
         }
 
@@ -73,13 +73,7 @@ namespace Arrays
         {
             Console.WriteLine(n);
             while (n != 1)
-            {
-                if (n % 2 == 0)
-                    n /= 2;
-                else
-                    n = (3 * n + 1);
-                Console.WriteLine(n);
-            }
+                Console.WriteLine(n % 2 == 0 ? n /= 2 : n = (3 * n + 1));
         }
 
 
