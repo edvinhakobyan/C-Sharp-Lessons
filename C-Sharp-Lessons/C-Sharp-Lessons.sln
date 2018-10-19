@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursion", "Recursion\Recu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{72845648-84EC-4A87-8575-BF5749087E9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array1", "Array1\Array1.csproj", "{9E111370-E209-46D7-A77D-87EC33B5CF0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{72845648-84EC-4A87-8575-BF5749087E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72845648-84EC-4A87-8575-BF5749087E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72845648-84EC-4A87-8575-BF5749087E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E111370-E209-46D7-A77D-87EC33B5CF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E111370-E209-46D7-A77D-87EC33B5CF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E111370-E209-46D7-A77D-87EC33B5CF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E111370-E209-46D7-A77D-87EC33B5CF0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
