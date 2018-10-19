@@ -53,10 +53,10 @@ namespace Arrays
             for (int i = 1000; i < 10000; i++)
             {
                 string temp = i.ToString();
-                if (temp.Length == temp.Distinct().Count() )
+                if (temp.Length == temp.Distinct().Count())
                 {
                     int cur = i, sum = 0;
-                    for (; cur > 0; cur /= 10, sum += cur % 10)
+                    for (; cur > 0; cur /= 10) sum += cur % 10;
                     if (int.Parse(temp.Substring(0, 2)) - int.Parse(temp.Substring(2, 2)) == sum)
                         Console.WriteLine(i);
                 }
