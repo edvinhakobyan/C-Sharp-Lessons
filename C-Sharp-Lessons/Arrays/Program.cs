@@ -88,8 +88,7 @@ namespace Arrays
          * Ստացված թիվը հանդիսանում է e հաստատունի մոտավոր արժեքը)։*/
         static double Task32(int n)
         {
-            double sum = 1;
-            int fact = 1;
+            double sum = 1, fact = 1;
             for (int i = 1; i <= n; i++, sum += 1.0 / fact)
                 fact *= i;
             return sum;
