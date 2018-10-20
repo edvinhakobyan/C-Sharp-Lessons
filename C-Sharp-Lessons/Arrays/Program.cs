@@ -10,7 +10,12 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            Task31(7);
+            Console.WriteLine($"e = {Task32(25)}");
+            Console.WriteLine($"1 + Pi + Pi^2/(2!) + … + Pi^N/(N!) = {Task33(3.2,20)}");
+            Console.WriteLine($"sin(Pi) = {Task34(Math.PI, 25)}");
+            Console.WriteLine($"cos(Pi) = {Task35(Math.PI, 25)}");
+            Console.WriteLine($"ln(1+Pi/10) = {Task36(Math.PI / 10, 25)}");
+
             Console.ReadKey();
         }
 
@@ -77,7 +82,74 @@ namespace Arrays
         }
 
 
+        /*Խնդիր_32:
+         * Տրված է N բնական թիվը։ Օգտագործելով մեկ ցիկլ հաշվել 
+         * 1 + 1/(1!) + 1/(2!) + 1/(3!) + … + 1/(N!) գումարը։ 
+         * Ստացված թիվը հանդիսանում է e հաստատունի մոտավոր արժեքը)։*/
+        static double Task32(int n)
+        {
+            double sum = 1;
+            int fact = 1;
+            for (int i = 1; i <= n; i++, sum += 1.0 / fact)
+                fact *= i;
+            return sum;
+        }
 
+
+        /*Խնդիր_33:
+         * Տրված են X իրական և N բնական թվերը։ 
+         * Գտնել 1 + X + X2/(2!) + … + XN/(N!) արտահայտության արժեքը։*/
+        static double Task33(double x, int n)
+        {
+            double sum = 1,  fact = 1;
+            for (int i = 1; i <= n; i++, sum += Math.Pow(x, i - 1) / fact)
+                fact *= i;
+            return sum;
+        }
+
+        /*Խնդիր_34:
+         * Տրված են X իրական և N բնական թվերը։ 
+         * Գտնել X – X3/(3!) + X5/(5!) – … + (–1)N·X2·N+1/((2·N+1)!) արտահայտության արժեքը։
+         * Ստացված թիվը sin(X)-ի մոտավոր արժեքն է։*/
+        static double Task34(double x, int n)
+        {
+            double sum = 0, fact = 1, sign = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                fact *= i;
+                if ((i & 1) == 1)
+                    sum += (sign *= -1) * Math.Pow(x, i) / fact;
+            }
+            return sum;
+        }
+
+        /*Խնդիր_35:
+         * Տրված են X իրական և N բնական թվերը։ 
+         * Գտնել 1 – X2/(2!) + X4/(4!) – … + (–1)N·X2·N/((2·N)!) արտահայտության արժեքը։
+         * Ստացված թիվը cos(X)-ի մոտավոր արժեքն է։*/
+        static double Task35(double x, int n)
+        {
+            double sum = 1, fact = 1, sign = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                fact *= i;
+                if ((i & 1) == 0)
+                    sum += (sign *= -1) * Math.Pow(x, i) / fact;
+            }
+            return sum;
+        }
+
+        /*Խնդիր_36:
+         * Տրված են X իրական(|X|<1) և N բնական թվերը։ 
+         * Գտնել X–X2/2 + X3/3 –…+ (–1)N–1·XN/N արտահայտության արժեքը։ 
+         * Ստացված թիվը ln(1+X)-ի մոտավոր արժեքն է։*/
+        static double Task36(double x, int n)
+        {
+            double sum = 0, sign = -1;
+            for (int i = 1; i <= n; i++)
+                sum += (sign *= -1) * Math.Pow(x, i) / i;
+            return sum;
+        }
 
     }
 }
