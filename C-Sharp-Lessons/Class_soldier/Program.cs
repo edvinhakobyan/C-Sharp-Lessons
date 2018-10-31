@@ -103,5 +103,11 @@ class Program
        anatherSolder.PrintSoldierField(SoldField.Weapon);
        anatherSolder.PrintSoldierField(SoldField.IfAlive);
 
+        Soldier[] Vasht = new Soldier[8];  // :))))
+        for (int i = 0; i < Vasht.Length; i++)
+        {
+            Vasht[i] = new Soldier();
+        }
+
     }
 }
