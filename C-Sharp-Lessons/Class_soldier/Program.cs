@@ -3,14 +3,14 @@
 
 class Soldier
 {
-    string name;
-    string surname;
-    int age;
-    bool gender;       //true if man
-    string nation;
-    string bloodType;  //in ABO system
-    string weapon;
-    bool ifAlive;      //Jok :)
+    private string name;
+    private string surname;
+    private int age;
+    private bool gender;       //true if man
+    private string nation;
+    private string bloodType;  //in ABO system
+    private string weapon;
+    private bool ifAlive;      //Jok :)
 
     public Soldier() { }
 
@@ -34,7 +34,6 @@ class Soldier
     public void SetSoldierBloodType(string BloodType) { bloodType = BloodType; }
     public void SetSoldierWeapon(string Weapon) { weapon = Weapon; }
     public void SetSoldierIfAlive(bool IfAlive) { IfAlive = ifAlive; }
-
 
     public void PrintSoldierField(SoldField fld)
     {
@@ -92,7 +91,7 @@ class Program
         soldier.PrintSoldierField(SoldField.Weapon);
         soldier.PrintSoldierField(SoldField.IfAlive);
 
-        Soldier anatherSolder = new Soldier("Volodia", "Ivanov", 35, true, "Rusian", "A_positive", "M4", true);
+        Soldier anatherSolder = new Soldier("Volodia", "Ivanov", 35, true, "Rusian", "A_positive", "M-4", true);
 
        anatherSolder.PrintSoldierField(SoldField.Name);
        anatherSolder.PrintSoldierField(SoldField.Surname);
