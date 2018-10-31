@@ -10,13 +10,69 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"e = {Task32(25)}");
-            Console.WriteLine($"1 + Pi + Pi^2/(2!) + … + Pi^N/(N!) = {Task33(3.2,20)}");
-            Console.WriteLine($"sin(Pi) = {Task34(Math.PI, 25)}");
-            Console.WriteLine($"cos(Pi) = {Task35(Math.PI, 25)}");
-            Console.WriteLine($"ln(1+Pi/10) = {Task36(Math.PI / 10, 25)}");
 
-            Console.ReadKey();
+        }
+
+
+
+
+
+        static bool almostIncreasingSequence(int[] sequence)
+        {
+
+            List<int> aa = sequence.ToList();
+            int Count = 0;
+            for (int i = 0; i < aa.Count - 1; i++)
+            {
+                if (aa[i] >= aa[i + 1])
+                {
+                    aa.RemoveAt(i);
+                    Count++;
+                    if (IfIncreasing(aa))
+                        return false;
+                }
+            }
+            return true;
+        }
+
+        static bool IfIncreasing(List<int> a)
+        {
+            for (int i = 0; i < a.Count - 1; i++)
+                if (a[i + 1] <= a[i])
+                    return false;
+
+            return true;
+        }
+
+
+        static bool almostIncreasingSequence1(int[] sequence)
+        {
+            int count = 0;
+            for (int i = 0; i < sequence.Length - 1; i++)
+            {
+                if (sequence[i] >= sequence[i + 1]) count++;
+                else if (i < sequence.Length - 2 && sequence[i] >= sequence[i + 2]) count++;
+            }
+            return count <= 2;
+        }
+
+
+
+
+        public static int GetSimpleMultCount(int a)
+        {
+            int[] mem = new int[500];
+            int count = 1, i = 2;
+            while (i*i < a)
+            {
+                if (a % i == 0 && !mem.Contains(i))
+                {
+                    mem[count++] = i;
+                    while (a % i == 0) a /= i;
+                }
+                i++;
+            }
+            return count;
         }
 
         /*Խնդիր_27:
