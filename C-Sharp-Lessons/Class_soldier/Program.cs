@@ -10,10 +10,11 @@ class Soldier
     string nation;
     string bloodType;  //in ABO system
     string weapon;
+    bool ifAlive;      //Jok :)
 
     public Soldier() { }
 
-    public Soldier(string name, string surname, int age, bool gender, string nation, string bloodType, string weapon)
+    public Soldier(string name, string surname, int age, bool gender, string nation, string bloodType, string weapon, bool ifAlive)
     {
         this.name = name;
         this.surname = surname;
@@ -22,6 +23,7 @@ class Soldier
         this.nation = nation;
         this.bloodType = bloodType;
         this.weapon = weapon;
+        this.ifAlive = ifAlive;
     }
 
     public void SetSoldierName(string Name) { name = Name; }
@@ -31,6 +33,7 @@ class Soldier
     public void SetSoldierNation(string Nation) { nation = Nation; }
     public void SetSoldierBloodType(string BloodType) { bloodType = BloodType; }
     public void SetSoldierWeapon(string Weapon) { weapon = Weapon; }
+    public void SetSoldierIfAlive(bool IfAlive) { IfAlive = ifAlive; }
 
 
     public void PrintSoldierField(SoldField fld)
@@ -43,6 +46,7 @@ class Soldier
             case SoldField.Nation: Write(nation); break;
             case SoldField.BloodType: Write(Convert.ToString(bloodType)); break;
             case SoldField.Weapon: Write(weapon); break;
+            case SoldField.IfAlive: Write(Convert.ToString(ifAlive)); break;
         }
     }
     void Write(string str)
@@ -59,7 +63,8 @@ public enum SoldField
     Gender,
     Nation,
     BloodType,
-    Weapon
+    Weapon,
+    IfAlive
 }
 
 
@@ -76,6 +81,7 @@ class Program
         soldier.SetSoldierNation("Armenian");
         soldier.SetSoldierBloodType("B_positive");
         soldier.SetSoldierWeapon("AK-74");
+        soldier.SetSoldierIfAlive(true);
 
         soldier.PrintSoldierField(SoldField.Name);
         soldier.PrintSoldierField(SoldField.Surname);
@@ -84,8 +90,9 @@ class Program
         soldier.PrintSoldierField(SoldField.Nation);
         soldier.PrintSoldierField(SoldField.BloodType);
         soldier.PrintSoldierField(SoldField.Weapon);
+        soldier.PrintSoldierField(SoldField.IfAlive);
 
-        Soldier anatherSolder = new Soldier("Volodia", "Ivanov", 35, true, "Rusian", "A_positive", "M4");
+        Soldier anatherSolder = new Soldier("Volodia", "Ivanov", 35, true, "Rusian", "A_positive", "M4", true);
 
        anatherSolder.PrintSoldierField(SoldField.Name);
        anatherSolder.PrintSoldierField(SoldField.Surname);
@@ -94,6 +101,7 @@ class Program
        anatherSolder.PrintSoldierField(SoldField.Nation);
        anatherSolder.PrintSoldierField(SoldField.BloodType);
        anatherSolder.PrintSoldierField(SoldField.Weapon);
-    }
+       anatherSolder.PrintSoldierField(SoldField.IfAlive);
 
+    }
 }
