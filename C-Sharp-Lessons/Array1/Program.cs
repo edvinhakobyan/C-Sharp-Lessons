@@ -77,7 +77,5 @@ namespace Array1
 
             return ret;
         }
-
-
     }
 }
