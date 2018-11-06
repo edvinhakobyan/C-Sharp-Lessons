@@ -24,7 +24,7 @@ namespace GeometricShape
         }
         public override double perimetr()
         {
-            return Math.Round((2 * Math.PI * radius.length), 3);
+            return 2 * Math.PI * radius.length;
         }
 
         public override string ToString()
