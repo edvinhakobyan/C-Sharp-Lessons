@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class_soldier", "Class_sold
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fem_Model", "Fem_Model\Fem_Model.csproj", "{F714E099-8303-41D3-9BEB-057BDC27414A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricShape", "GeometricShape\GeometricShape.csproj", "{6F2C6AB9-1103-48A2-A3E1-73A01FD8549F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{F714E099-8303-41D3-9BEB-057BDC27414A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F714E099-8303-41D3-9BEB-057BDC27414A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F714E099-8303-41D3-9BEB-057BDC27414A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F2C6AB9-1103-48A2-A3E1-73A01FD8549F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2C6AB9-1103-48A2-A3E1-73A01FD8549F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2C6AB9-1103-48A2-A3E1-73A01FD8549F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2C6AB9-1103-48A2-A3E1-73A01FD8549F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
