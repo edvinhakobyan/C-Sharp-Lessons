@@ -20,7 +20,7 @@ namespace GeometricShape
 
         public override string ToString()
         {
-            return $"(x: {x} y: {y})";
+            return $"(x: {x:0.000} y: {y:0.000})";
         }
     }
 }

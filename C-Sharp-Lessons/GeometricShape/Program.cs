@@ -21,6 +21,7 @@ namespace GeometricShape
                Console.WriteLine(shp[i].ToString());
                 Console.WriteLine();
             }
+            Console.ReadKey();
         }
 
         public static Shape GetRandomShape()
@@ -43,7 +44,7 @@ namespace GeometricShape
 
         public static Point RandomPoint()
         {
-            return new Point(rand.Next(-100, 100), rand.Next(-100, 100));
+            return new Point(100 * rand.NextDouble(), 100 * rand.NextDouble());
         }
     }
 }

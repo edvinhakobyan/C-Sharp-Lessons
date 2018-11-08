@@ -84,8 +84,6 @@ namespace Polimorfizm
             {
                 return B * H;
             }
-
-
         }
 
 
