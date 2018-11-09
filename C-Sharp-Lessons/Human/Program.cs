@@ -16,6 +16,7 @@ namespace Human
             Human h3 = new Human("Edvin", "Hakobyan", 33);
             Human h4 = new Human("Edvin", "Hakobyan", 33, 77);
             Human h5 = new Human("Edvin", "Hakobyan", 33, 77, "Man");
+
         }
     }
 }
