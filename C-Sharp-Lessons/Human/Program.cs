@@ -8,6 +8,7 @@ namespace Human
 {
     class Program
     {
+        public int MyProperty { get; set; }
         static void Main(string[] args)
         {
             Human h = new Human();
@@ -17,6 +18,12 @@ namespace Human
             Human h4 = new Human("Edvin", "Hakobyan", 33, 77);
             Human h5 = new Human("Edvin", "Hakobyan", 33, 77, "Man");
 
+
+        }
+
+        static int rr(ref int r)
+        {
+            return 0;
         }
     }
 }

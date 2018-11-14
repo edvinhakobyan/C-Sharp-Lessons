@@ -11,6 +11,7 @@ namespace GeometricShape
         static Random rand = new Random();
         static void Main(string[] args)
         {
+
             Shape[] shp = new Shape[20];
 
             for (int i = 0; i < shp.Length; i++)
