@@ -30,7 +30,7 @@ namespace HideFild
 
     class Myclass1: Myclass
     {
-        int a;
+        readonly int a;
         string b;
         double c;
 
@@ -41,6 +41,11 @@ namespace HideFild
         }
         Myclass1(int a, string b, double c) : base(a, b, c) { }
     }
+
+
+    partial class AA
+    { 
+}
 
 
 
