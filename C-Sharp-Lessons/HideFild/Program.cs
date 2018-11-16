@@ -10,6 +10,7 @@ namespace HideFild
     {
         static void Main(string[] args)
         {
+
         }
     }
 
@@ -20,11 +21,17 @@ namespace HideFild
         string b;
         double c;
 
+        public Myclass()
+        {
+
+        }
+
         public  Myclass(int a, string b, double c)
         {
             this.a = a;
             this.b = b;
             this.c = c;
+            
         }
     }
 
