@@ -3,14 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace HideFild
 {
+
+    class rr
+    {
+        int a, b;
+        rr(int a, int b)
+        {
+            this.a = a*a;
+            this.b = b*a;
+        }
+
+
+    }
     class Program
     {
         static void Main(string[] args)
         {
-
+            Complex e = new Complex(1.2, 4.5);
+            Complex c = new Complex(1.2, 4.5);
+            Console.WriteLine(e + c);
         }
     }
 
@@ -23,6 +38,7 @@ namespace HideFild
 
         public Myclass()
         {
+
 
         }
 
