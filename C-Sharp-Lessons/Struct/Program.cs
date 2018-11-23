@@ -13,6 +13,7 @@ namespace Struct
 
         static void Main(string[] args)
         {
+
             Console.BufferHeight = 20000;
             //ttt:
             //    Console.WriteLine("Enter Circle Radius");
