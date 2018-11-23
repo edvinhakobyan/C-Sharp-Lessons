@@ -16,7 +16,7 @@ namespace Struct
             this.x = x;
             this.y = y;
         }
-
+        
         static public Point  AddPoint(Point a,Point b)
         {
             return new Point(a.x + b.x, a.y + b.y);

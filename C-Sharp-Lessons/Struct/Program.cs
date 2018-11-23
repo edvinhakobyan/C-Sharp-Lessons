@@ -8,9 +8,12 @@ namespace Struct
 {
     class Program
     {
+        public int F { protected get; set; }
+
+
         static void Main(string[] args)
         {
-
+            Console.BufferHeight = 20000;
             //ttt:
             //    Console.WriteLine("Enter Circle Radius");
             //    Console.Write("R = ");
@@ -41,29 +44,38 @@ namespace Struct
             Console.WriteLine("Enter Circle Radius");
             Console.Write("R = ");
             double r = double.Parse(Console.ReadLine());
+            Console.WriteLine($"L = {2 * Math.PI * r}");
 
+            List<double> t = new List<double>();
 
-            
-            for (int h = 4; h <= 50; h++)
+            for (int h = 500000; h <= 5000000; h+=1000)
             {
-                if (360 % h == 0)
+                double sum = 0;
+                Point curent = new Point(r, 0);
+                for (double i = 360.0 / h; i <= 360.0000001; i += (360.0 / h))
                 {
-                    double sum = 0;
-                    Point curent = new Point();
-                    for (int i = 360 / h; i <= 360; i += (360 / h))
-                    {
-                        Point p = new Point(r * Math.Cos(i * Math.PI / 180), r * Math.Sin(i * Math.PI / 180));
-                        sum += Point.Length(curent, p);
-                        curent = p;
-                    }
-
-
+                    Point p = new Point(r * Math.Cos(i * Math.PI / 180), r * Math.Sin(i * Math.PI / 180));
+                    sum += Point.Length(curent, p);
+                    curent = p;
                 }
-
+                Console.WriteLine(h + " " + sum);
+                t.Add(sum);
             }
-
-
+            ;
+            Console.WriteLine(t.Average());
+            Console.ReadKey();
 
         }
+
+        static bool ifTrue(double a)
+        {
+            if (a <= 360) return true;
+
+            if (a >= 359.99 && a <= 360.01) return true;
+
+            return false;
+        }
+
+
     }
 }
