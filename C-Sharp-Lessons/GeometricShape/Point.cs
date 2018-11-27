@@ -18,9 +18,21 @@ namespace GeometricShape
             this.y = y;
         }
 
+        public virtual void transform(double x, double y)
+        {
+            this.x += x;
+            this.y += y;
+        }
+
+
+
         public override string ToString()
         {
             return $"(x: {x:0.000} y: {y:0.000})";
         }
+
+
+
+
     }
 }

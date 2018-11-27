@@ -17,6 +17,8 @@ namespace GeometricShape
             
         }
 
+        
+
         public virtual double perimetr()  //ba vor shape sarqen esh esh
         {
             double sum = 0;
