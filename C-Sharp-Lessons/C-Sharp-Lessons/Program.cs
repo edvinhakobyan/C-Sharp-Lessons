@@ -14,8 +14,8 @@ namespace C_Sharp_Lessons
         {
             Class1 w = new Class1();
 
-            ThreadStart del = new ThreadStart(w.method);
-            Thread t = new Thread(del);
+            ThreadStart deligat = new ThreadStart(w.method);
+            Thread t = new Thread(deligat);
             t.Start();
         }
 
