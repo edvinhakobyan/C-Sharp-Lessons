@@ -9,11 +9,9 @@ namespace C_Sharp_Lessons
 {
     class Program
     {
-        static int a;
         static void Main(string[] args)
         {
+
         }
-
-
     }
 }
