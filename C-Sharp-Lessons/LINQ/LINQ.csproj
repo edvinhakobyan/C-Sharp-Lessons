@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BF89837F-BB31-4AC0-90F7-51826C3EF950}</ProjectGuid>
+    <ProjectGuid>{0D3EC068-7231-4CD1-B4A2-C80FCD13FA1F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>jnj000</RootNamespace>
-    <AssemblyName>jnj000</AssemblyName>
+    <RootNamespace>LINQ</RootNamespace>
+    <AssemblyName>LINQ</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
