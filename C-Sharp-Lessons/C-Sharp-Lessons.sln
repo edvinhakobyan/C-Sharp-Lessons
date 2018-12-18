@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Struct", "Struct\Struct.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{0D3EC068-7231-4CD1-B4A2-C80FCD13FA1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary", "Dictionary\Dictionary.csproj", "{81FCAA85-9ACA-483D-AA16-9F0186473EBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{0D3EC068-7231-4CD1-B4A2-C80FCD13FA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D3EC068-7231-4CD1-B4A2-C80FCD13FA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D3EC068-7231-4CD1-B4A2-C80FCD13FA1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81FCAA85-9ACA-483D-AA16-9F0186473EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FCAA85-9ACA-483D-AA16-9F0186473EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FCAA85-9ACA-483D-AA16-9F0186473EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FCAA85-9ACA-483D-AA16-9F0186473EBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

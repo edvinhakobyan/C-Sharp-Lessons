@@ -10,7 +10,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }
