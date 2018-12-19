@@ -30,7 +30,7 @@ namespace Dictionary
             dic.Add("k", "կ");
             dic.Add("h", "հ");
             dic.Add("dz", "ձ");
-            dic.Add("kx", "ղ");
+            dic.Add("x", "ղ");
             dic.Add("tch", "ճ");
             dic.Add("m", "մ");
             dic.Add("y", "յ");
@@ -54,26 +54,29 @@ namespace Dictionary
             dic.Add("f", "ֆ");
 
 
-
-            Console.OutputEncoding = Encoding.UTF8;
-            while (true)
+            foreach(var item in dic.Keys)
             {
-                string output;
-                try
-                {
-                    output = dic[Console.ReadKey().KeyChar.ToString()];
-                }
-                catch
-                {
-                    output =Console.ReadKey().KeyChar.ToString();
-                }
-                Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                Console.Write(output);
+                Console.WriteLine($"{item} - {dic[item]}");
             }
 
-            
 
 
+            Console.OutputEncoding = Encoding.UTF8;
+            string input = "";
+            while (true)
+            {
+
+
+                input += Console.ReadKey().KeyChar;
+                
+
+
+
+
+
+
+
+            }
         }
     }
 }
