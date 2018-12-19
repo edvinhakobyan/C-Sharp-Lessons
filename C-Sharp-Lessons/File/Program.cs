@@ -17,19 +17,18 @@ namespace File
 
         public static void PrintAllFiles(string directory)
         {
-            string[] File_Pats = Directory.GetFiles(directory);
-
-            foreach (string File_Pat in File_Pats)
+            try
             {
-                Console.WriteLine(File_Pat);
+                foreach (string File_Pat in Directory.GetFiles(directory))
+                    Console.WriteLine(File_Pat);
             }
-
-            string[] sub = Directory.GetDirectories(directory);
-            foreach (string subdirectory in sub)
+            catch (Exception e) { Console.WriteLine(e.Message); }
+            try
             {
-                PrintAllFiles(subdirectory);
+                foreach (string subdirectory in Directory.GetDirectories(directory))
+                    PrintAllFiles(subdirectory);
             }
-
+            catch (Exception e){ Console.WriteLine(e.Message);}
         }
     }
 }
