@@ -17,10 +17,7 @@ namespace File
 
         public static void PrintAllFiles(string directory)
         {
-
-
             string[] File_Pats = Directory.GetFiles(directory);
-
 
             foreach (string File_Pat in File_Pats)
             {
