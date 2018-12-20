@@ -11,22 +11,25 @@ namespace File
     {
         static void Main(string[] args)
         {
-            PrintAllFiles(@"C:\");
+            FileStream fl = new FileStream(@"All_File_Pats", FileMode.Create, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(fl);
+            PrintAllFiles(@"C:\", writer);
         }
 
 
-        public static void PrintAllFiles(string directory)
+        public static void PrintAllFiles(string directory, StreamWriter writer)
         {
+
             try
             {
                 foreach (string File_Pat in Directory.GetFiles(directory))
-                    Console.WriteLine(File_Pat);
+                    writer.WriteLine(File_Pat);
             }
             catch (Exception e) { Console.WriteLine(e.Message); }
             try
             {
                 foreach (string subdirectory in Directory.GetDirectories(directory))
-                    PrintAllFiles(subdirectory);
+                    PrintAllFiles(subdirectory, writer);
             }
             catch (Exception e){ Console.WriteLine(e.Message);}
         }
