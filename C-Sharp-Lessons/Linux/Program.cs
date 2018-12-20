@@ -12,9 +12,18 @@ namespace Linux
         static void Main(string[] args)
         {
             Console.WriteLine("For Show Fils and Folders in Pat, Write Path and Enter");
-            Console.WriteLine("For Create File, Use Comand Create");
-            Console.WriteLine("For Delete File, Use Comand Delete");
-            Console.WriteLine("For Append File, Use Comand Append");
+            Console.Write("For Create File, Use Comand ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Create");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("For Delete File, Use Comand ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Delete");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("For Append File, Use Comand ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Append");
+            Console.ForegroundColor = ConsoleColor.Gray;
             while (true)
             {
                 ConsoleKey key = Console.ReadKey().Key;
