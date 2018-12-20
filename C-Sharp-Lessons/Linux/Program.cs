@@ -11,7 +11,8 @@ namespace Linux
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("For Show Fils and Folders in Pat, Write Path and Enter");
+            Console.WriteLine("For Show Fils and Folders in Folder, Write Folder Path and Enter");
+            Console.WriteLine("For Show Fils Content, Write File Path and Enter");
             Console.Write("For Create File, Use Comand ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Create");
