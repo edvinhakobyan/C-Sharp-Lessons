@@ -63,7 +63,23 @@ namespace Dictionary
                 char input = Console.ReadKey().KeyChar;
                 if(input == '\r')
                     Console.SetCursorPosition(0, Console.CursorTop + 1);
-                
+
+                if (input == '\b')
+                {
+                    if (Console.CursorLeft > 0)
+                    {
+                        Console.Write(" ");
+                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                        continue;
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+
+
+
                 char output;
                 if (Console.CursorLeft > 0)
                 {
