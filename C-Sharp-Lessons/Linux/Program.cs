@@ -47,13 +47,13 @@ namespace Linux
                 {
                     filNames = Directory.GetFiles(Path);
                 }
-                catch (Exception e) {  }
+                catch {  }
 
                 try
                 {
                     folderNames = Directory.GetDirectories(Path);
                 }
-                catch (Exception e) { }
+                catch{ }
 
                 if (filNames != null)
                 {
