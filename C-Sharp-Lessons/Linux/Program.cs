@@ -32,6 +32,7 @@ namespace Linux
 
             while (true)
             {
+                bool flag = true;
                 ConsoleKey key = Console.ReadKey().Key;
 
                 if (key == ConsoleKey.Escape)
@@ -61,6 +62,7 @@ namespace Linux
                     Console.ForegroundColor = ConsoleColor.Gray;
                     foreach (var item in filNames)
                         Console.WriteLine(item);
+                    flag = false;
                 }
 
                 if (folderNames != null)
@@ -70,12 +72,14 @@ namespace Linux
                     Console.ForegroundColor = ConsoleColor.Gray;
                     foreach (var item in folderNames)
                         Console.WriteLine(item);
+                    flag = false;
                 }
 
                 if(File.Exists(Path))
                 {
                     foreach (var item in File.ReadAllLines(Path))
                         Console.WriteLine(item);
+                    flag = false;
                 }
 
                 if(Path == "Create")
@@ -88,6 +92,7 @@ namespace Linux
                         {
                             File.Create(fileName);
                             Console.WriteLine($"File {fileName} created");
+                            flag = false;
                         }
                         else
                         {
@@ -97,6 +102,7 @@ namespace Linux
                             {
                                 File.Create(fileName);
                                 Console.WriteLine($"File {fileName} created");
+                                flag = false;
                             }
                         }
                     }
@@ -116,9 +122,11 @@ namespace Linux
                         {
                             File.Delete(fileName);
                             Console.WriteLine($"File {fileName} deleted");
+                            flag = false;
                         }
                         {
                             Console.WriteLine($"File {fileName} not exist");
+                            flag = false;
                         }
                     }
                     catch (Exception e)
@@ -141,10 +149,12 @@ namespace Linux
                                 string text = Console.ReadLine();
                                 wr.WriteLine(text);
                                 Console.WriteLine($"Text is Append in your File");
+                                flag = false;
                             }
                         }
                         {
                             Console.WriteLine($"File {fileName} not exist");
+                            flag = false;
                         }
                     }
                     catch (Exception e)
@@ -152,6 +162,12 @@ namespace Linux
                         Console.WriteLine(e.Message);
                     }
                 }
+
+                if(flag)
+                {
+                    Console.WriteLine($"{Path} is Not Comand");
+                }
+
             }
         }
     }
