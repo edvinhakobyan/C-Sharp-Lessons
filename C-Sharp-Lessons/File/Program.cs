@@ -17,14 +17,15 @@ namespace File
             writer.Close();
         }
 
-
         public static void PrintAllFiles(string directory, StreamWriter writer)
         {
-
             try
             {
                 foreach (string File_Pat in Directory.GetFiles(directory))
+                {
                     writer.WriteLine(File_Pat);
+                    Console.WriteLine(File_Pat);
+                }
             }
             catch (Exception e) { Console.WriteLine(e.Message); }
             try
