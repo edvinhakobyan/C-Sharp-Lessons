@@ -88,21 +88,23 @@ namespace Linux
                     string fileName = Console.ReadLine();
                     try
                     {
-                        if(!File.Exists(fileName))
+                        if (!File.Exists(fileName))
                         {
-                            File.Create(fileName);
-                            Console.WriteLine($"File {fileName} created");
-                            flag = false;
+                            //using (FileStream str = new FileStream(fileName, FileMode.Create))
+                            //{
+
+                            //}
+                              using (File.Create(fileName)) { }
+                                Console.WriteLine($"File {fileName} created");
                         }
                         else
                         {
                             Console.WriteLine($"File with Name {fileName} exist");
-                            Console.Write($"Do you want to replace it (y/n)");
+                            Console.Write($"Do you want to replace it (y/n) ");
                             if (Console.ReadLine() == "y")
                             {
                                 File.Create(fileName);
                                 Console.WriteLine($"File {fileName} created");
-                                flag = false;
                             }
                         }
                     }
@@ -110,6 +112,7 @@ namespace Linux
                     {
                         Console.WriteLine(e.Message);
                     }
+                    flag = false;
                 }
 
                 if (Path == "Delete")
@@ -122,17 +125,17 @@ namespace Linux
                         {
                             File.Delete(fileName);
                             Console.WriteLine($"File {fileName} deleted");
-                            flag = false;
                         }
+                        else
                         {
                             Console.WriteLine($"File {fileName} not exist");
-                            flag = false;
                         }
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e.Message);
                     }
+                    flag = false;
                 }
 
                 if (Path == "Append")
@@ -149,18 +152,18 @@ namespace Linux
                                 string text = Console.ReadLine();
                                 wr.WriteLine(text);
                                 Console.WriteLine($"Text is Append in your File");
-                                flag = false;
                             }
                         }
+                        else
                         {
                             Console.WriteLine($"File {fileName} not exist");
-                            flag = false;
                         }
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e.Message);
                     }
+                    flag = false;
                 }
 
                 if(flag)

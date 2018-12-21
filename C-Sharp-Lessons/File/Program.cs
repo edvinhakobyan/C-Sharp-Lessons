@@ -1,39 +1,66 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace File
+namespace HomeWork1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            FileStream fl = new FileStream(@"All_File_Pats", FileMode.Create, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(fl);
-            PrintAllFiles(@"C:\", writer);
-            writer.Close();
-        }
+            string[] drives = Directory.GetLogicalDrives();
 
-        public static void PrintAllFiles(string directory, StreamWriter writer)
+            Console.WriteLine("Available discs:");
+
+            foreach (string drive in drives)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("- {0}", drive);
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\nchoose one of the available disks\n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+
+            Console.Write("Select Disc :");
+
+            while (true)
+            {
+                string disc = Console.ReadLine().ToUpper();
+                string directory = disc + ":\\";
+
+                if (drives.Contains(directory))
+                    GetInfoAboutDiskFiles(directory);
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("choose one of the available disks");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
+            }
+            Console.ReadKey();
+        }
+        public static void GetInfoAboutDiskFiles(string directory)
         {
             try
             {
-                foreach (string File_Pat in Directory.GetFiles(directory))
+                foreach (string item in Directory.GetFiles(directory))
                 {
-                    writer.WriteLine(File_Pat);
-                    Console.WriteLine(File_Pat);
+
+                    Console.WriteLine(item);
                 }
             }
             catch (Exception e) { Console.WriteLine(e.Message); }
             try
             {
                 foreach (string subdirectory in Directory.GetDirectories(directory))
-                    PrintAllFiles(subdirectory, writer);
+                    GetInfoAboutDiskFiles(subdirectory);
             }
-            catch (Exception e){ Console.WriteLine(e.Message);}
+            catch (Exception e) { Console.WriteLine(e.Message); }
         }
     }
 }
