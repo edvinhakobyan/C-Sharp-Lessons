@@ -25,7 +25,7 @@ namespace Linux
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Append");
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("For Exsit, Use ");
+            Console.Write("For Exit, Use ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Esc");
             Console.ForegroundColor = ConsoleColor.Gray;
