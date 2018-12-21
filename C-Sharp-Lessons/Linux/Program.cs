@@ -90,11 +90,7 @@ namespace Linux
                     {
                         if (!File.Exists(fileName))
                         {
-                            //using (FileStream str = new FileStream(fileName, FileMode.Create))
-                            //{
-
-                            //}
-                              using (File.Create(fileName)) { }
+                            using (File.Create(fileName)) ;
                                 Console.WriteLine($"File {fileName} created");
                         }
                         else
@@ -103,8 +99,8 @@ namespace Linux
                             Console.Write($"Do you want to replace it (y/n) ");
                             if (Console.ReadLine() == "y")
                             {
-                                File.Create(fileName);
-                                Console.WriteLine($"File {fileName} created");
+                                using (File.Create(fileName)) ;
+                                    Console.WriteLine($"File {fileName} created");
                             }
                         }
                     }
