@@ -14,6 +14,7 @@ namespace File
             FileStream fl = new FileStream(@"All_File_Pats", FileMode.Create, FileAccess.Write);
             StreamWriter writer = new StreamWriter(fl);
             PrintAllFiles(@"C:\", writer);
+            writer.Close();
         }
 
 
