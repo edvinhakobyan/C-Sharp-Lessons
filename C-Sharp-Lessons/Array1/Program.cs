@@ -13,10 +13,6 @@ namespace Array1
             SortArray(new int[] { 3, 2, 3, 0 }, false);
         }
 
-
-
-
-
         static int[] SortArray(int[] arr, bool flag)
         {
             int[] ret = new int[arr.Length];
@@ -25,8 +21,6 @@ namespace Array1
             {
                 ret[i] = arr[i];
             }
-
-
 
             for (int i = 0; i < arr.Length; i++)
             {
