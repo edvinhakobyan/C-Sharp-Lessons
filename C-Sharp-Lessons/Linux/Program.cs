@@ -90,7 +90,7 @@ namespace Linux
                     {
                         if (!File.Exists(fileName))
                         {
-                            using (File.Create(fileName)) ;
+                            using (File.Create(fileName)) { };
                                 Console.WriteLine($"File {fileName} created");
                         }
                         else
@@ -99,7 +99,7 @@ namespace Linux
                             Console.Write($"Do you want to replace it (y/n) ");
                             if (Console.ReadLine() == "y")
                             {
-                                using (File.Create(fileName)) ;
+                                using (File.Create(fileName)) { };
                                     Console.WriteLine($"File {fileName} created");
                             }
                         }
@@ -142,13 +142,12 @@ namespace Linux
                     {
                         if (File.Exists(fileName))
                         {
-                            using (StreamWriter wr = File.AppendText(fileName))
-                            {
-                                Console.Write("-> ");
-                                string text = Console.ReadLine();
-                                wr.WriteLine(text);
-                                Console.WriteLine($"Text is Append in your File");
-                            }
+                            StreamWriter wr = File.AppendText(fileName);
+                            Console.Write("-> ");
+                            string text = Console.ReadLine();
+                            wr.WriteLine(text);
+                            wr.Close();
+                            Console.WriteLine($"Text is Append in your File");
                         }
                         else
                         {
