@@ -11,8 +11,6 @@ namespace brackets
         static void Main(string[] args)
         {
             Console.WriteLine(IsTrueBrackets(Console.ReadLine()).ToString());
-            string r = Console.ReadLine();
-            r.Replace("  ","");
         }
 
         private static bool IsTrueBrackets(string inp)
