@@ -15,15 +15,15 @@ namespace brackets
 
         private static bool IsTrueBrackets(string inp)
         {
-            string list = new string( inp.Where(t => (t == '(' || t == ')' || t == '{' || t == '}' ||
-                                                      t == '<' || t == '>' || t == '[' || t == ']')).ToArray());
+            inp = new string( inp.Where(t => (t == '(' || t == ')' || t == '{' || t == '}' ||
+                                        t == '<' || t == '>' || t == '[' || t == ']')).ToArray());
 
-            while (list.Contains("()") || list.Contains("{}") || list.Contains("<>") || list.Contains("[]"))
+            while (inp.Contains("()") || inp.Contains("{}") || inp.Contains("<>") || inp.Contains("[]"))
             {
-                list = list.Replace("()", ""); list = list.Replace("{}", "");
-                list = list.Replace("<>", ""); list = list.Replace("[]", "");
+                inp = inp.Replace("()", ""); inp = inp.Replace("{}", "");
+                inp = inp.Replace("<>", ""); inp = inp.Replace("[]", "");
             }
-            return list.Length == 0;
+            return inp.Length == 0;
         }
     }
 }
