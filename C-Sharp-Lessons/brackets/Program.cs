@@ -16,7 +16,7 @@ namespace brackets
         private static bool IsTrueBrackets(string inp)
         {
             inp = new string( inp.Where(t => (t == '(' || t == ')' || t == '{' || t == '}' ||
-                                        t == '<' || t == '>' || t == '[' || t == ']')).ToArray());
+                                              t == '<' || t == '>' || t == '[' || t == ']')).ToArray());
 
             while (inp.Contains("()") || inp.Contains("{}") || inp.Contains("<>") || inp.Contains("[]"))
             {
