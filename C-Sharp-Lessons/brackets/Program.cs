@@ -11,26 +11,20 @@ namespace brackets
         static void Main(string[] args)
         {
             Console.WriteLine(IsTrueBrackets(Console.ReadLine()).ToString());
+            string r = Console.ReadLine();
+            r.Replace("  ","");
         }
 
         private static bool IsTrueBrackets(string inp)
         {
             string list = "";
-            for (int i = 0; i < inp.Length; i++)
+            string brc = new string( inp.Where(t => (t == '(' || t == ')' || t == '{' || t == '}' ||
+                                                     t == '<' || t == '>' || t == '[' || t == ']')).ToArray());
+
+            while (list.Contains("()") || list.Contains("{}") || list.Contains("<>") || list.Contains("[]"))
             {
-                if (inp[i] == '(' || inp[i] == ')' || inp[i] == '{' || inp[i] == '}' ||
-                   inp[i] == '<' || inp[i] == '>' || inp[i] == '[' || inp[i] == ']')
-                { list += inp[i]; }
-            }
-                
-            while (true)
-            {
-                int count = 0;
-                if (list.Contains("()")) { list = list.Replace("()", ""); ++count; }
-                if (list.Contains("{}")) { list = list.Replace("{}", ""); ++count; }
-                if (list.Contains("<>")) { list = list.Replace("<>", ""); ++count; }
-                if (list.Contains("[]")) { list = list.Replace("[]", ""); ++count; }
-                if (count == 0) break;
+                list = list.Replace("()", ""); list = list.Replace("{}", "");
+                list = list.Replace("<>", ""); list = list.Replace("[]", "");
             }
             return list.Length == 0;
         }
