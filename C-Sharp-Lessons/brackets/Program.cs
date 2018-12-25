@@ -30,7 +30,8 @@ namespace brackets
 
         private static void FloatingPointInParentheses(string inp)
         {
-            string pattern = @"[([{<]{1}[-+]{0,1}[0-9]{0,}[.]{0,1}[0-9]{0,}[)\]}>]{1}";
+            //string pattern = @"([(]{1}[-+]{0,1}[0-9]{0,}\.{0,1}[0-9]{0,}[)]{1})|([<]{1}[-+]{0,1}[0-9]{0,}\.{0,1}[0-9]{0,}[>]{1})|([[]{1}[-+]{0,1}[0-9]{0,}\.{0,1}[0-9]{0,}[\]]{1})|([{]{1}[-+]{0,1}[0-9]{0,}\.{0,1}[0-9]{0,}[}]{1})";
+            string pattern = @"([(]{1}[-+]{0,1}[0-9]{0,}\.{0,1}[0-9]{0,}[)]{1})";
             MatchCollection m = Regex.Matches(inp, pattern);
             foreach (var item in m)
                 Console.WriteLine(item.ToString().Substring(1, item.ToString().Length - 2));
