@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linux", "Linux\Linux.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brackets", "brackets\brackets.csproj", "{94C3F222-A1A3-44BD-82BA-DCB27B32C9E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json", "Json\Json.csproj", "{CFCFA8F1-A805-4FC3-8771-EBABDDF7CFC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{94C3F222-A1A3-44BD-82BA-DCB27B32C9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94C3F222-A1A3-44BD-82BA-DCB27B32C9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94C3F222-A1A3-44BD-82BA-DCB27B32C9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFCFA8F1-A805-4FC3-8771-EBABDDF7CFC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCFA8F1-A805-4FC3-8771-EBABDDF7CFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCFA8F1-A805-4FC3-8771-EBABDDF7CFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFCFA8F1-A805-4FC3-8771-EBABDDF7CFC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
