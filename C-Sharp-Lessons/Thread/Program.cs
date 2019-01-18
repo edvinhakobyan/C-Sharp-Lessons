@@ -15,24 +15,36 @@ namespace Thread_
 
         static void secund_treade()
         {
-            while (true)
-                Console.WriteLine("            " + DateTime.Now.Millisecond);
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("sec thread -> " + Thread.CurrentThread.GetHashCode());
+                Thread.Sleep(2000);
+            }
+
         }
 
         static void Main(string[] args)
         {
 
-            ThreadStart start = new ThreadStart(secund_treade);
+            Thread[] tr = new Thread[8];
 
-            Thread tr = new Thread(start);
+            for (int i = 0; i < 8; i++)
+            {
+                tr[i] = new Thread(new ThreadStart(secund_treade));
+                tr[i].Start();
+            }
 
-            tr.Start();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("main thread -> " + Thread.CurrentThread.GetHashCode());
+                Thread.Sleep(500);
+            }
 
-            while (true)
-                Console.WriteLine(DateTime.Now.Millisecond);
+            Console.WriteLine("--------------");
 
+            for (int i = 0; i < 8; i++) tr[i].Join();
 
-
+            Console.ReadKey();
         }
     }
 }
