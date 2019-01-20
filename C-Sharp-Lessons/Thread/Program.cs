@@ -32,6 +32,7 @@ namespace Thread_
             {
                 tr[i] = new Thread(new ThreadStart(secund_treade));
                 tr[i].Start();
+                //tr[i].IsBackground = true;
             }
 
             for (int i = 0; i < 10; i++)
@@ -42,9 +43,9 @@ namespace Thread_
 
             Console.WriteLine("--------------");
 
-            for (int i = 0; i < 8; i++) tr[i].Join();
+            //for (int i = 0; i < 8; i++) tr[i].Join();
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
