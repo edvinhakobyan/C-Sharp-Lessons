@@ -23,7 +23,7 @@ namespace Sorting_Algoritms
             Console.WriteLine(Environment.NewLine);
 
 
-            Dictionary<sortingAlgMethods, Stopwatch> times = new Dictionary<sortingAlgMethods, Stopwatch>();
+            Dictionary<sortingAlgMethods, Stopwatch> times = new Dictionary<sortingAlgMethods, Stopwatch>();  // annasun oop kanstrukcia
             times.Add(new sortingAlgMethods(BubbleSort), new Stopwatch());
             times.Add(new sortingAlgMethods(SelectionSort), new Stopwatch());
             times.Add(new sortingAlgMethods(InsertionSort), new Stopwatch());
