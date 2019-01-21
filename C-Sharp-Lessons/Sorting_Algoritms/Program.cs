@@ -14,6 +14,7 @@ namespace Sorting_Algoritms
 
         static void Main(string[] args)
         {
+            Console.WindowWidth = 120;
             Random rand = new Random();
 
             int experimentCount = 100;
