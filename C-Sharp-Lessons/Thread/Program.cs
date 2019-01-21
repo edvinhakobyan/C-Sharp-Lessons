@@ -23,9 +23,7 @@ namespace Thread_
         {
 
             ThreadStart start = new ThreadStart(secund_treade);
-
             Thread tr = new Thread(start);
-
             tr.Start();
 
             while (true)
