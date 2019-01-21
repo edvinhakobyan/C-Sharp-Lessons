@@ -21,7 +21,7 @@ namespace Sorting_Algoritms
             Console.WriteLine($"Experimets Count = {experimentCount} |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      ");
             File.AppendAllText("Result.txt",$"Experimets Count = {experimentCount} |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      ");
             Console.WriteLine();
-            Console.WriteLine(Environment.NewLine);
+            File.AppendAllText("Result.txt", Environment.NewLine);
 
 
             Dictionary<sortingAlgMethods, Stopwatch> times = new Dictionary<sortingAlgMethods, Stopwatch>();  // annasun oop kanstrukcia
