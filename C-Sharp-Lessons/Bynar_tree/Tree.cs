@@ -23,40 +23,39 @@ class Tree
         Top = new Node(rootValue);
     }
 
-    public void Add_Node_Non_Recursiv(int Value)
+    public void Add_Node_Non_Recursiv(Node _in)
     {
         if (Top == null)
         {
-            Top = new Node(Value);
+            Top = _in;
             return;
         }
+
         Node Current = Top;
         bool flag = false;
+
         do
         {
-            if (Value < Current.Value)
+            if (_in < Current)
             {
                 if (Current.Left == null)
                 {
-                    Current.Left = new Node(Value);
+                    Current.Left = _in;
                     flag = true;
                 }
                 else
-                {
                     Current = Current.Left;
-                }
+                
             }
-            if (Value >= Current.Value)
+            if (_in >= Current)
             {
                 if (Current.Right == null)
                 {
-                    Current.Right = new Node(Value);
+                    Current.Right = _in;
                     flag = true;
                 }
                 else
-                {
                     Current = Current.Right;
-                }
             }
         } while (!flag);
     }
@@ -67,24 +66,24 @@ class Tree
 
     }
 
-    public void Print(Node nod, ref string s)
+    public void Print(Node nod)
     {
         if (nod == null)
         {
             nod = Top;
         }
-        if (nod.Left != null)
+        if (nod.Left == null)
         {
-            Print(nod.Left, ref s);
-            Console.Write(nod.Value.ToString() + " ");
+            Console.Write(nod.Value + " ");
         }
         else
         {
-            Console.Write(nod.Value.ToString() + " ");
+            Print(nod.Left);
+            Console.Write(nod.Value + " ");
         }
         if (nod.Right != null)
         {
-            Print(nod.Right, ref s);
+            Print(nod.Right);
         }
     }
 }

@@ -13,8 +13,19 @@ class Node
     public Node(int Value)
     {
         this.Value = Value;
-        this.Left = null;
-        this.Right = null;
+        Left = null;
+        Right = null;
     }
+
+    //public static bool operator ==(Node left, Node right)
+    //{
+    //    if (left == null && right == null) return true;
+    //    return left.Value == right.Value;
+    //}
+    //public static bool operator !=(Node left, Node right) { return !(left == right); }
+    //public static bool operator >(Node left, Node right) { return left.Value > right.Value; }
+    //public static bool operator <(Node left, Node right) { return !(left > right); }
+    //public static bool operator >=(Node left, Node right) { return left.Value >= right.Value; }
+    //public static bool operator <=(Node left, Node right) { return left.Value <= right.Value; }
 }
 
