@@ -36,7 +36,7 @@ class Tree
 
         do
         {
-            if (_in < Current)
+            if (_in.Value < Current.Value)
             {
                 if (Current.Left == null)
                 {
@@ -45,9 +45,8 @@ class Tree
                 }
                 else
                     Current = Current.Left;
-
             }
-            if (_in >= Current)
+            if (_in.Value >= Current.Value)
             {
                 if (Current.Right == null)
                 {
@@ -72,13 +71,13 @@ class Tree
         {
             nod = Top;
         }
-        if (nod.Left == null)
+        if (nod.Left != null)
         {
+            Print(nod.Left);
             Console.Write(nod.Value + " ");
         }
         else
         {
-            Print(nod.Left);
             Console.Write(nod.Value + " ");
         }
         if (nod.Right != null)
