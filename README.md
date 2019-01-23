@@ -1,2 +1,3 @@
-# C-Sharp-Lessons
-Lessons
+# :fast_forward: In this repository I collected my homework and many useful examples that I created while studying  [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) Programming
+C# is very similar to other object-oriented programming languages, but it has a unique set of features that make some programmers favor it. C# is a statically-typed language, which means your code will be checked for errors before it gets built into an app. Errors will be easier to track down, and since statically-typed languages are also more strict with how you code something, the codebase, in general, will be more consistent and thus easier to maintain as it grows in size and complexity. Considering that C# is a statically-typed language it is also faster than other languages because things are more clearly defined.
+<img class="irc_mi" src="https://user-images.githubusercontent.com/35269498/41661260-f0a0a50a-74a6-11e8-8ba4-d427eb370de1.png" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" alt="Картинки по запросу C#"  style="margin-top: 120px;">
