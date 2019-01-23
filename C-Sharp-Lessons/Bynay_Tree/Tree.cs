@@ -40,7 +40,7 @@ class Tree
                 else
                     Current = Current.Left;
             }
-            if (_in.Value >= Current.Value)
+            else
             {
                 if (Current.Right == null)
                 {
@@ -53,10 +53,21 @@ class Tree
         }
     }
 
-    public void Add_Node_Recursiv(int Value)
+    public void AddR_Node_Recursiv(ref Node temp, Node val)
     {
+        if (temp == null)
+        {
+            temp = val;
+            return;
+        }
 
-
+        if (val.Value < temp.Value)
+        {
+            AddR_Node_Recursiv(ref temp.Left, val);
+            return;
+        }
+        AddR_Node_Recursiv(ref temp.Right, val);
+        return;
     }
 
     public void Print(Node nod)
