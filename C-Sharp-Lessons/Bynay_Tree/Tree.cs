@@ -18,11 +18,6 @@ class Tree
         Top = root;
     }
 
-    public Tree(int rootValue)
-    {
-        Top = new Node(rootValue);
-    }
-
     public void Add_Node_Non_Recursiv(Node _in)
     {
         if (Top == null)
@@ -32,16 +27,15 @@ class Tree
         }
 
         Node Current = Top;
-        bool flag = false;
 
-        do
+        while(true)
         {
             if (_in.Value < Current.Value)
             {
                 if (Current.Left == null)
                 {
                     Current.Left = _in;
-                    flag = true;
+                    break;
                 }
                 else
                     Current = Current.Left;
@@ -51,12 +45,12 @@ class Tree
                 if (Current.Right == null)
                 {
                     Current.Right = _in;
-                    flag = true;
+                    break;
                 }
                 else
                     Current = Current.Right;
             }
-        } while (!flag);
+        }
     }
 
     public void Add_Node_Recursiv(int Value)
