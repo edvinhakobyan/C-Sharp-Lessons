@@ -18,11 +18,11 @@ namespace Sorting_Algoritms
             Random rand = new Random();
 
             int experimentCount = 100;
-            Console.WriteLine($"Experimets Count = {experimentCount} |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      ");
+            Console.WriteLine($"Experimets Count = {experimentCount} |Native         |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      ");
             File.AppendAllText("Result.txt",$"Experimets Count = {experimentCount} |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      ");
             Console.WriteLine();
             File.AppendAllText("Result.txt", Environment.NewLine);
-
+            
 
             Dictionary<sortingAlgMethods, Stopwatch> times = new Dictionary<sortingAlgMethods, Stopwatch>();  // annasun oop kanstrukcia
             times.Add(new sortingAlgMethods(BubbleSort), new Stopwatch());
@@ -30,6 +30,7 @@ namespace Sorting_Algoritms
             times.Add(new sortingAlgMethods(InsertionSort), new Stopwatch());
             times.Add(new sortingAlgMethods(ShellSort), new Stopwatch());
             times.Add(new sortingAlgMethods(QuickSort), new Stopwatch());
+            times.Add(new sortingAlgMethods(Native), new Stopwatch());
 
             for (int arrlength = 500; arrlength < 20000; arrlength += 500) // masivi erkarutyunn a
             {
@@ -52,7 +53,7 @@ namespace Sorting_Algoritms
                 foreach (var item in times.Values)
                 {
                     Console.Write($"|{item.ElapsedMilliseconds,-15}");
-                    File.AppendAllText("Result.txt", $"|{item.ElapsedMilliseconds,-15}");
+                    File.AppendAllText("Result.txt", $"|{item.ElapsedMilliseconds,-10}");
                     item.Restart();
                 }
                 Console.WriteLine();
@@ -62,6 +63,13 @@ namespace Sorting_Algoritms
             Console.ReadKey();
 
         }
+
+        #region BubbleSort
+        public static void Native(int[] data)
+        {
+            Array.Sort(data);
+        }
+        #endregion
 
         #region BubbleSort
         public static void BubbleSort(int[] data)
@@ -157,23 +165,18 @@ namespace Sorting_Algoritms
             x = data[(l + r) / 2]; /* find pivot item */
             while (true)
             {
-                while (data[i] < x)
-                    i++;
-                while (x < data[j])
-                    j--;
+                while (data[i] < x) i++;
+                while (x < data[j]) j--;
                 if (i <= j)
                 {
                     swap(ref data[i], ref data[j]);
                     i++;
                     j--;
                 }
-                if (i > j)
-                    break;
+                if (i > j) break;
             }
-            if (l < j)
-                QuickSort(data, l, j);
-            if (i < r)
-                QuickSort(data, i, r);
+            if (l < j)  QuickSort(data, l, j);
+            if (i < r)  QuickSort(data, i, r);
         }
         #endregion
 
@@ -187,9 +190,7 @@ namespace Sorting_Algoritms
         static void print(int[] a)
         {
             foreach (var item in a)
-            {
                 Console.Write($"{item} ");
-            }
             Console.WriteLine();
         }
     }

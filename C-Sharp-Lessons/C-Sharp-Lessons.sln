@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting_Algoritms", "Sortin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bynay_Tree", "Bynay_Tree\Bynay_Tree.csproj", "{6A176327-347F-4036-B491-366F3B358198}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{7424A73B-0B4E-4561-B41E-CF36E392EF2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -271,6 +273,14 @@ Global
 		{6A176327-347F-4036-B491-366F3B358198}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A176327-347F-4036-B491-366F3B358198}.Release|x86.ActiveCfg = Release|Any CPU
 		{6A176327-347F-4036-B491-366F3B358198}.Release|x86.Build.0 = Release|Any CPU
+		{7424A73B-0B4E-4561-B41E-CF36E392EF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7424A73B-0B4E-4561-B41E-CF36E392EF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7424A73B-0B4E-4561-B41E-CF36E392EF2F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7424A73B-0B4E-4561-B41E-CF36E392EF2F}.Debug|x86.Build.0 = Debug|Any CPU
+		{7424A73B-0B4E-4561-B41E-CF36E392EF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7424A73B-0B4E-4561-B41E-CF36E392EF2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7424A73B-0B4E-4561-B41E-CF36E392EF2F}.Release|x86.ActiveCfg = Release|Any CPU
+		{7424A73B-0B4E-4561-B41E-CF36E392EF2F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
