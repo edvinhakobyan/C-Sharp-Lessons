@@ -16,41 +16,14 @@ namespace Reflection
 
             FieldInfo[] Fi = t.GetFields();
             MethodInfo[] Mi = t.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
-            
-            
-            foreach (var item in Fi)
-            {
 
-            }
 
             foreach (var item in Mi)
             {
-                ParameterInfo[] Pi = item.GetParameters();
-
-                if (item.IsPrivate)
-                {
-                    Console.Write("Private " + item + "(");
-                    foreach (var item1 in Pi)
-                    {
-                        Console.Write(" " + item1.Name + " ");
-                    }
-                    Console.Write(")");
-                    Console.WriteLine();
-
-                }
-
-
-                //    Console.WriteLine(item.Name + " " + "is Private");
-                //if (item.IsPublic)
-                //    Console.WriteLine(item.Name + " " + "is Public");
-                //if(item.IsStatic)
-                //    Console.WriteLine(item.Name + " " + "is Static");
+                Console.Write(item.Name);
+                Console.WriteLine();
             }
-
-
-
-
-
+            Console.Read();
         }
     }
 }
