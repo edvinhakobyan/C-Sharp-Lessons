@@ -19,7 +19,7 @@ namespace Sorting_Algoritms
 
             int experimentCount = 100;
             Console.WriteLine($"Experimets Count = {experimentCount} |Native         |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      |mySort         ");
-            File.AppendAllText("Result.txt",$"Experimets Count = {experimentCount} |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      ");
+            File.AppendAllText("Result.txt", $"Experimets Count = {experimentCount} |Native         |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      |mySort         ");
             Console.WriteLine();
             File.AppendAllText("Result.txt", Environment.NewLine);
             
@@ -55,7 +55,7 @@ namespace Sorting_Algoritms
                 foreach (var item in times.Values)
                 {
                     Console.Write($"|{item.ElapsedMilliseconds,-15}");
-                    File.AppendAllText("Result.txt", $"|{item.ElapsedMilliseconds,-10}");
+                    File.AppendAllText("Result.txt", $"|{item.ElapsedMilliseconds,-15}");
                     item.Restart();
                 }
                 Console.WriteLine();
