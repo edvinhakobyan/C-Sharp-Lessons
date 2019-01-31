@@ -12,16 +12,23 @@ namespace Reflection
     {
         static void Main(string[] args)
         {
-            Type t = typeof(Sort);
+            Console.WindowWidth = 220;
+            Assembly a = Assembly.Load("SortingGeneric");
+            Type[] tps = a.GetTypes();
 
-            FieldInfo[] Fi = t.GetFields();
-            MethodInfo[] Mi = t.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
-
-
-            foreach (var item in Mi)
+            foreach (var item1 in tps)
             {
-                Console.Write(item.Name);
+                Console.WriteLine(item1);
                 Console.WriteLine();
+                Type t = item1.GetType();
+                FieldInfo[] Fi = t.GetFields();
+                MethodInfo[] Mi = t.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
+
+                foreach (var item2 in Mi)
+                {
+                    Console.Write(item2);
+                    Console.WriteLine();
+                }
             }
             Console.Read();
         }

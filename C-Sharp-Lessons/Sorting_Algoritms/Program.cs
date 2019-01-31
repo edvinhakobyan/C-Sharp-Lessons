@@ -14,23 +14,24 @@ namespace Sorting_Algoritms
 
         static void Main(string[] args)
         {
-            Console.WindowWidth = 120;
+            Console.WindowWidth = 220;
             Random rand = new Random();
 
             int experimentCount = 100;
-            Console.WriteLine($"Experimets Count = {experimentCount} |Native         |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      ");
+            Console.WriteLine($"Experimets Count = {experimentCount} |Native         |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      |mySort         ");
             File.AppendAllText("Result.txt",$"Experimets Count = {experimentCount} |BubbleSort     |SelectionSort  |InsertionSort  |ShellSort      |QuickSort      ");
             Console.WriteLine();
             File.AppendAllText("Result.txt", Environment.NewLine);
             
 
             Dictionary<sortingAlgMethods, Stopwatch> times = new Dictionary<sortingAlgMethods, Stopwatch>();  // annasun oop kanstrukcia
+            times.Add(new sortingAlgMethods(Native), new Stopwatch());
             times.Add(new sortingAlgMethods(BubbleSort), new Stopwatch());
             times.Add(new sortingAlgMethods(SelectionSort), new Stopwatch());
             times.Add(new sortingAlgMethods(InsertionSort), new Stopwatch());
             times.Add(new sortingAlgMethods(ShellSort), new Stopwatch());
             times.Add(new sortingAlgMethods(QuickSort), new Stopwatch());
-            times.Add(new sortingAlgMethods(Native), new Stopwatch());
+            times.Add(new sortingAlgMethods(mysort), new Stopwatch());
 
             for (int arrlength = 500; arrlength < 20000; arrlength += 500) // masivi erkarutyunn a
             {
@@ -38,7 +39,8 @@ namespace Sorting_Algoritms
                 for (int i = 0; i < experimentCount; i++) // nuyn erkarutyamb bayc random tarber masivner "experimentCount" hat
                 {
                     for (int j = 0; j < arrlength; j++)  // mi hat random masiv
-                        arr[j] = rand.Next(-100000, 10000);
+                        arr[j] = rand.Next(500000);
+
 
                     foreach (var item in times)  // masiv copy a anum amen algoritmi hamar u sort anum
                     {
@@ -59,12 +61,10 @@ namespace Sorting_Algoritms
                 Console.WriteLine();
                 File.AppendAllText("Result.txt", Environment.NewLine);
             }
-                
             Console.ReadKey();
-
         }
 
-        #region BubbleSort
+        #region Native
         public static void Native(int[] data)
         {
             Array.Sort(data);
@@ -123,7 +123,6 @@ namespace Sorting_Algoritms
             int[] intervals = { 1, 2, 4, 8 };
             ShellSort(data, intervals);
         }
-
         public static void ShellSort(int[] data, int[] intervals)
         {
             int i, j, k, m;
@@ -153,7 +152,6 @@ namespace Sorting_Algoritms
         {
             QuickSort(data, 0, data.Length - 1);
         }
-
         public static void QuickSort(int[] data, int l, int r)
         {
             int i, j;
@@ -177,6 +175,17 @@ namespace Sorting_Algoritms
             }
             if (l < j)  QuickSort(data, l, j);
             if (i < r)  QuickSort(data, i, r);
+        }
+        #endregion
+
+        #region my sort
+        public static void mysort(int[] a)
+        {
+            int[] temp = new int[a.Max()+1];
+            for (int i = 0; i < a.Length; temp[a[i]]++, i++) ;
+            for (int i = 0, ind = 0; i < temp.Length; i++)
+                for (int j = 0; j < temp[i]; j++)
+                    a[ind++] = i;
         }
         #endregion
 
