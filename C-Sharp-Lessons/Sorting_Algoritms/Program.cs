@@ -40,7 +40,7 @@ namespace Sorting_Algoritms
                 for (int i = 0; i < experimentCount; i++) // nuyn erkarutyamb bayc random tarber masivner "experimentCount" hat
                 {
                     for (int j = 0; j < arrlength; j++)  // mi hat random masiv
-                        arr[j] = rand.Next(500000);
+                        arr[j] = rand.Next(1000000);
 
 
                     foreach (var item in times)  // masiv copy a anum amen algoritmi hamar u sort anum
