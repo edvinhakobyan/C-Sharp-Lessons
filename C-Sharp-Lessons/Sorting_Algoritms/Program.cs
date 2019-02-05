@@ -9,12 +9,13 @@ using System.IO;
 namespace Sorting_Algoritms
 {
     public delegate void sortingAlgMethods(int[] arr);
+
+
     class Program
     {
 
         static void Main(string[] args)
         {
-            int e = '1' - 48;
             Console.WindowWidth = 220;
             Random rand = new Random();
 
