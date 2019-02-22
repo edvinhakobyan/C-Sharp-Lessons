@@ -10,12 +10,15 @@ namespace Task_
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            Task task1 = new Task(() => Console.WriteLine("Task1 is executed"));
+            task1.Start();
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            Task task2 = Task.Factory.StartNew(() => Console.WriteLine("Task2 is executed"));
+
+            Task task3 = Task.Run(() => Console.WriteLine("Task3 is executed"));
+
+            Console.ReadLine();
         }
+
     }
 }
