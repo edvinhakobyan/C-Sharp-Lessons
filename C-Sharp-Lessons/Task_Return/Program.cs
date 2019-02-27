@@ -11,9 +11,6 @@ namespace Task_Return
         static void Main(string[] args)
         {
             Task task = FactorialAsyncVoid_(10);
-            task.Wait();
-            Met();
-
         }
 
         static async void Met()
@@ -30,11 +27,17 @@ namespace Task_Return
         //Task
         static async Task FactorialAsyncVoid_(int n)
         {
-            await Task.Run(() => FactorialVoid(n));
+            await Task.Run(() => FactorialInt(n));
         }
 
         //Task<int>
         static async Task<int> FactorialAsyncInt(int n)
+        {
+            return await Task.Run(() => FactorialInt(n));
+        }
+
+        //ValueTask<int> 
+        static async ValueTask<int> FactorialAsync(int n)
         {
             return await Task.Run(() => FactorialInt(n));
         }
