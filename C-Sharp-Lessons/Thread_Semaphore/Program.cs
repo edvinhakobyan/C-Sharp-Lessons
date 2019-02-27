@@ -16,13 +16,15 @@ namespace Thread_Semaphore
 
         static void Main(string[] args)
         {
-            for (int i = 0; i < 20; i++)
+
+            Console.BufferHeight = 2200;
+            for (int i = 0; i < 50; i++)
             {
                 ParameterizedThreadStart PTS = new ParameterizedThreadStart(Method);
                 Thread tr = new Thread(PTS);
                 tr.Name = i.ToString();
                 tr.Start(new int[] {i, 0 , random.Next(100,1000)});
-                Thread.Sleep(200);
+                Thread.Sleep(100);
             }
         }
 
@@ -36,11 +38,11 @@ namespace Thread_Semaphore
                     Console.CursorTop = param[0];
                     Console.CursorLeft = param[1]++;
                     Console.Write("->" + Thread.CurrentThread.Name);
-                    if (param[1] == 60)
+                    if (param[1] == 70)
                     {
                         param[1] = 0;
                         Console.CursorLeft = 0;
-                        Console.Write(new string(' ', 65));
+                        Console.Write(new string(' ', 75));
                         Console.CursorLeft = 0;
                     }
                 }
