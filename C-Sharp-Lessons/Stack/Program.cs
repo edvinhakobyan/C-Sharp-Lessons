@@ -11,26 +11,11 @@ namespace Stack_
     {
         static void Main(string[] args)
         {
-            int N = 1000000000;
-            var time = DateTime.Now;
-            for (int i = 0; i < N; i++)
-            {
-                bit4096 a = new bit4096();
-            }
-            Console.WriteLine(DateTime.Now - time);
-
-            time = DateTime.Now;
-            for (int i = 0; i < N; i++)
-            {
-                Class_bit4096 a = new Class_bit4096();
-            }
-            Console.WriteLine(DateTime.Now - time);
-            Console.ReadKey();
 
         }
     }
 
-    class Class_bit4096
+   /* class Class_bit4096
     {
         bit2048 a1;
         bit2048 a2;
@@ -146,4 +131,5 @@ namespace Stack_
     {
         long a1;
     }
+    */
 }
