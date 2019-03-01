@@ -8,58 +8,15 @@ using System.Threading;
 
 namespace Thread_Semaphore
 {
-    public static class ooo
-    {
-        public static bool isEven(this int a)
-        {
-            return a % 2 == 0 ? true : false;
-        }
-    }
-
-    public class A
-    {
-        public string a = "";
-        public A(string a)
-        {
-            this.a = a;
-        }
-
-        public virtual void show()
-        {
-            Console.WriteLine("My name is Edvin");
-        }
-    }
-
-    class B : A
-    {
-        public B(string a) : base(a) { }
-        public override void show()
-        {
-            Console.WriteLine("rtrtrt");
-        }
-    }
-
-     class C: B
-    {
-        public C(string a) : base(a) { }
-        public new void show()
-        {
-            Console.WriteLine("rtrtrt");
-        }
-    }
-
     class Program 
     {
+
+
         static object a = new object();
         static Random random = new Random();
 
         static void Main(string[] args)
         {
-            C x = new C("");
-
-            ((A)x).show();
-
-
             Console.BufferHeight = 2200;
             for (int i = 0; i < 50; i++)
             {

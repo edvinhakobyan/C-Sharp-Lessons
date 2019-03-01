@@ -1,6 +1,15 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
+
+using System;
+using System.Runtime;
+using System.Security;
+using System.Security.Permissions;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
+using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Contracts;
 
 namespace HelloApp
 {
@@ -32,10 +41,38 @@ namespace HelloApp
         static void Main(string[] args)
         {
             CancellationTokenSource cts = new CancellationTokenSource();
-            FactorialAsync(20, cts.Token);
-            Thread.Sleep(3000);
-            cts.Cancel();
+            //FactorialAsync(20, cts.Token);
+            mymethod(cts.Token);
+            while(true)
+            {
+                if (Console.ReadKey().Key == ConsoleKey.Escape)
+                {
+                    cts.Cancel();
+                    break;
+                }
+            }
             Console.Read();
         }
+
+        public static void mymethod(CancellationToken t)
+        {
+            if (t.IsCancellationRequested) return;
+
+            var outer = Task.Run(() =>      // внешняя задача
+            {
+                for (;true;)
+                {
+                    Console.Write('*');
+                    Thread.Sleep(100);
+                }
+            });
+
+        }
+
+
+
+
+
+
     }
 }
