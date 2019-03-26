@@ -14,7 +14,7 @@ namespace C_Sharp_Lessons
 
         public Program()
         {
-            pr = new Program(this);
+
         }
 
         static void Main(string[] args)
