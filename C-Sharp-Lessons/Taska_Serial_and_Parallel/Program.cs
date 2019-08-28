@@ -12,6 +12,9 @@ namespace Taska_Serial_and_Parallel
         static void Main(string[] args)
         {
             FactorialSerial();
+            Thread.Sleep(5000);
+            Console.WriteLine();
+            FactorialParallel();
             Console.Read();
         }
 
@@ -23,7 +26,7 @@ namespace Taska_Serial_and_Parallel
                 result *= i;
             }
             Console.WriteLine($"Факториал числа {n} равен {result}");
-            Thread.Sleep(10000);
+
         }
 
         // определение асинхронного метода

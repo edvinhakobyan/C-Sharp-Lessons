@@ -11,20 +11,27 @@ namespace Stack_
     {
         static void Main(string[] args)
         {
-
+            int a = new int();
         }
     }
 
-   /* class Class_bit4096
+
+    class Class_bit4096
     {
-        bit2048 a1;
-        bit2048 a2;
+        public bit2048 a1;
+        public bit2048 a2;
+
+        public string show()
+        {
+            return a1 + " " + a2;
+        }
+
     }
 
     struct bit8388608
     {
-        bit4194304 a1;
-        bit4194304 a2;
+        public bit4194304 a1;
+        public bit4194304 a2;
     }
 
     struct bit4194304
@@ -125,11 +132,16 @@ namespace Stack_
     {
         bit64 a1;
         bit64 a2;
+
+        public string show()
+        {
+            return a1 + " " + a2;
+        }
+
     }
 
     struct bit64
     {
         long a1;
     }
-    */
 }

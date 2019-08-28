@@ -45,7 +45,7 @@ namespace Lessens
             long long_;
             double double_;
 
-            Console.WriteLine($"Binary Representation of variable Y:");
+            Console.WriteLine($"Binary Representation of variable X:");
             switch (X_tipe)
             {
                 case "sbyte":
